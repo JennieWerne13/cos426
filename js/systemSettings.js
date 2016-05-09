@@ -123,7 +123,7 @@ SystemSettings.addMTLObjectFromFile = function( fileTexture, fileObj, xPos, yPos
         materials.preload();
 
         var objLoader = new THREE.OBJLoader();
-        // objLoader.setMaterials( materials );
+        objLoader.setMaterials( materials );
         objLoader.setPath( 'animated_models/' );
         objLoader.load( fileObj, function ( object ) {
 
@@ -131,11 +131,6 @@ SystemSettings.addMTLObjectFromFile = function( fileTexture, fileObj, xPos, yPos
             object.scale.multiplyScalar(scale);
             object.rotation.x = rotateX * Math.PI / 2;
             object.rotation.y = rotateY * Math.PI / 2;
-            object.traverse(function (child) {
-                if (child instanceof THREE.Mesh) {
-                    child.material = materials;
-                }
-            });
             Scene.addObject( object );
 
         });
@@ -242,13 +237,16 @@ SystemSettings.level0 = {
         SystemSettings.addObjectFromFile( 'bus.png', 'bus.obj', -85, 0, 0, 45, 0, 0 );
 
         // bear
-        SystemSettings.addMTLObjectFromFile( 'bear.mtl', 'bear.obj', 280, 0, 110, 1, 0, 2 );
+        SystemSettings.addObjectFromFile( 'bear.jpg', 'bear-obj.obj', 290, 0, 90, 1.5, 0, 2.3 );
 
-        SystemSettings.addMTLObjectFromFile( 'lego_people_obj.mtl', 'lego_people_obj.obj', 0, 0, 0, 1, 0, 0 );
+        // dummy
+        SystemSettings.addObjectFromFile( 'dummy.jpg', 'dummy.obj', -65, 0, 125, 0.18, 0, 3 );
 
+        // BB8
+        SystemSettings.addObjectFromFile( 'bb8.jpg', 'bb8.obj', 100, 0, 120, 0.25, 0, 3 );
 
-        // SystemSettings.addMTLObjectFromFile( 'smallprinter.obj.mtl', 'smallprinter.obj', 20, 0, 20, 1, 0 );        
-
+        // Iron Man -- GOAL
+        SystemSettings.addObjectFromFile( 'iron_man.png', 'iron_man.obj', 220,0,-70, 17, 0, 3 );
 
         // creating a maze
         this.walls[0] = SystemSettings.createWall(60, 10, 0, 155);
