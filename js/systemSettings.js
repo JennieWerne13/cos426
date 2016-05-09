@@ -356,6 +356,12 @@ SystemSettings.level1 = {
 
         Scene.addObject( goal );
 
+        // Coco: 
+        SystemSettings.addMTLObjectFromFile( 'coco_head.mtl', 'coco_head.obj', 0, 0, 0, 1, 0 ); 
+        SystemSettings.addMTLObjectFromFile( 'coco_left_foot.mtl', 'coco_left_foot.obj', 0, 0, 0, 1, 0 ); 
+        SystemSettings.addMTLObjectFromFile( 'coco_right_foot.mtl', 'coco_right_foot.obj', 0, 0, 0, 1, 0 ); 
+        SystemSettings.addMTLObjectFromFile( 'coco_main.mtl', 'coco_main.obj', 0, 0, 0, 1, 0 ); 
+
         // creating eating club
         this.walls[0] = SystemSettings.createWall(10, 290, -195, 15);
         Scene.addObject( this.walls[0] );
