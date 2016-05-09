@@ -248,6 +248,51 @@ SystemSettings.level0 = {
         // Iron Man -- GOAL
         SystemSettings.addObjectFromFile( 'iron_man.png', 'iron_man.obj', 220,0,-70, 17, 0, 3 );
 
+        // Deadpool
+        // SystemSettings.addObjectFromFile( 'deadpool.png', 'deadpool.obj', 0, 0, 0, 0.30, 0, 0 );
+
+        // Flash
+        // SystemSettings.addObjectFromFile( 'flash.png', 'flash.obj', 0, 0, 0, 3, 0, 3 );
+
+        // computer
+        // SystemSettings.addObjectFromFile( 'computer.jpg', 'computer.obj', 0, 0, 0, 1, 0, 0 );
+
+        // mario
+        // SystemSettings.addObjectFromFile( 'mario.jpg', 'mario.obj', 0, 0, 0, 0.18, 0, 0 );
+
+        // luigi
+        // SystemSettings.addObjectFromFile( 'luigi.jpg', 'luigi.obj', 0, 0, 0, 0.18, 0, 0 );
+
+        // shockwave
+        // SystemSettings.addObjectFromFile( 'shockwave.bmp', 'shockwave.obj', 0, 0, 0, 17, 0, 0 );
+
+        // spiderman
+        // SystemSettings.addObjectFromFile( 'spiderman.jpg', 'spiderman.obj', 0, 0, 0, 7, 0, 0 );        
+
+        // chair
+        // SystemSettings.addObjectFromFile( 'chair.jpg', 'chair.obj', 0, 7.5, 0, 0.75, 0, 0 ); 
+
+        // spongebob
+        // SystemSettings.addObjectFromFile( 'spongebob.jpg', 'spongebob.obj', 0, 0, 0, 17, 0, 0 );         
+
+        // mr. krabs
+        // SystemSettings.addObjectFromFile( 'mr_krabs.png', 'mr_krabs.obj', 0, 0, 0, 13, 0, 0 ); 
+
+        // patrick
+        // SystemSettings.addObjectFromFile( 'patrick.jpg', 'patrick.obj', 0, 0, 0, 13, 0, 0 );
+
+        // pizza
+        // SystemSettings.addObjectFromFile( 'pizza.png', 'pizza.obj', 0, 0, 0, 20, 0, 0 );
+
+        // desk
+        SystemSettings.addObjectFromFile( 'desk.jpg', 'desk.obj', 0, 0, 30, 0.1, 0, 0 ); 
+
+        // printer: +3, +8.5, +5, 0.13, 0, 0 (relative to desk)
+        SystemSettings.addObjectFromFile( 'printer.jpg', 'printer.obj', 3, 8.5, 35, 0.13, 0, 0 );
+
+        // computer: -3, +6.8, +2, 0.7, 0, 0 (relative to desk)
+        SystemSettings.addObjectFromFile( 'computer.jpg', 'computer.obj', -3, 6.8, 32, 0.7, 0, 0 );
+
         // creating a maze
         this.walls[0] = SystemSettings.createWall(60, 10, 0, 155);
         Scene.addObject( this.walls[0] );
