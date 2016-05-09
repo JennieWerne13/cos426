@@ -3,8 +3,7 @@ var Goal = Goal || {};
 Goal.init = function(level) {
 	// FILL IN FOR EVERY LEVEL
 	if (level == 0) {
-		//this.position = [220,10,-70];
-		this.position = [0, 0, 0];
+		this.position = [220,10,-70];
 	}
 	else if (level == 1 || level == 2) { 
 		// JENNIE: also storing locations of officers
