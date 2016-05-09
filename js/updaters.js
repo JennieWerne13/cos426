@@ -102,6 +102,26 @@ sinkParticle = function(pos,vel,delta_t,plane,damping,i,particleAttributes,alive
     }
 }
 
+// bounceParticle = function(pos,vel,delta_t,plane,damping,i,positions,velocities) {
+
+//     var planeN = new THREE.Vector3(plane.x,plane.y,plane.z);
+
+//     var tmp = pos.clone();
+//     tmp.sub(planeN.clone().multiply(planeN).multiplyScalar(plane.w));
+//     tmp.add(vel.clone().multiplyScalar(delta_t));
+//     var finalDir = tmp.dot(planeN);
+
+//     if (finalDir < 0.0) {
+//         vel_new = reflectVelocityAcrossNormal(vel,planeN,damping);
+//         pos = reflectPositionAcrossNormal(pos,vel,vel_new,delta_t,plane,planeN)
+//         vel = vel_new;
+
+//     }
+
+//     setElement( i, positions, pos );
+//     setElement( i, velocities, vel );
+// }
+
 bounceParticle = function(pos,vel,delta_t,plane,damping,i,positions,velocities) {
 
     var planeN = new THREE.Vector3(plane.x,plane.y,plane.z);
@@ -442,13 +462,9 @@ TargetUpdater0.prototype.updateVelocities = function ( particleAttributes, alive
         var v = getElement( i, velocities );
         // now update velocity based on forces...
 
-        if (Math.random() < 0.7) {
+        if (Math.random() < 0.1) {
             var scal = 10.0;
             v.add(new THREE.Vector3(scal*(Math.random() - 0.5),0,scal*(Math.random()) - 0.5));
-        }
-        else {
-            var scal = 10.0;
-            v = new THREE.Vector3(scal*(Math.random() - 0.5),0,scal*(Math.random() - 0.5));
         }
 
         setElement( i, velocities, v );

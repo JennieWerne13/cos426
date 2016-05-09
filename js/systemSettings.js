@@ -203,6 +203,10 @@ SystemSettings.level0 = {
         },
         collidables: {
             bouncePlanes: [ {plane : new THREE.Vector4( 0, 1, 0, 0 ), damping : 0.8 } ],
+            bounceBoxes: [ {boxDef: {xmin:-30, xmax:30, ymin: -100, ymax:100, zmin:150, zmax:160}, damping : 0 }, 
+                           {boxDef: {xmin:-30, xmax:20, ymin: -100, ymax:100, zmin:70, zmax:150}, damping : 0 },
+                           {boxDef: {xmin:-70, xmax:-30, ymin: -100, ymax:100, zmin:70, zmax:80}, damping : 0 },
+                           {boxDef: {xmin:5, xmax:25, ymin: -100, ymax:100, zmin:-25, zmax:35}, damping : 0 }],
         },
     },
 
@@ -221,17 +225,13 @@ SystemSettings.level0 = {
         var phongGray     = new THREE.MeshPhongMaterial( {color: 0x444444, emissive: 0x222222, side: THREE.DoubleSide } );
         var phongGreen     = new THREE.MeshPhongMaterial( {color: 0x003200, emissive: 0x222222, side: THREE.DoubleSide, map: texture} );
 
-        var box_geo   = new THREE.BoxGeometry(10,30,10)
 
         var plane     = new THREE.Mesh( plane_geo, phongGreen );
-        var box       = new THREE.Mesh( box_geo, phongGray );
-        box.position.set( 0.0, 15.0, 0.0 );
 
         plane.rotation.x = -1.57;
         plane.position.y = 0;
 
         Scene.addObject( plane );
-        Scene.addObject( box );
 
         // creating a maze
         this.walls[0] = SystemSettings.createWall(60, 10, 0, 155);
