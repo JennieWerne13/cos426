@@ -90,7 +90,7 @@ SystemSettings.createWall = function(xWidth, zWidth, xPos, zPos, rotate) {
     return wall;
 };
 
-SystemSettings.addObjectFromFile = function( fileTexture, fileObj, xPos, yPos, zPos, scale, rotate ) {
+SystemSettings.addObjectFromFile = function( fileTexture, fileObj, xPos, yPos, zPos, scale, rotateX, rotateY ) {
     var file_texture = 'textures/' + fileTexture;
     var file_obj = 'animated_models/' + fileObj;
     var texture = THREE.ImageUtils.loadTexture( file_texture );
@@ -103,7 +103,8 @@ SystemSettings.addObjectFromFile = function( fileTexture, fileObj, xPos, yPos, z
     objLoader.load(file_obj, function (obj) {
             obj.position.set(xPos, yPos, zPos);
             obj.scale.multiplyScalar(scale);
-            obj.rotation.x = rotate * Math.PI / 2;
+            obj.rotation.x = rotateX * Math.PI / 2;
+            obj.rotation.y = rotateY * Math.PI / 2;
             obj.traverse(function (child) {
                 if (child instanceof THREE.Mesh) {
                     child.material = material;
@@ -113,23 +114,34 @@ SystemSettings.addObjectFromFile = function( fileTexture, fileObj, xPos, yPos, z
         });
 }
 
-SystemSettings.addMTLObjectFromFile = function( fileTexture, fileObj, xPos, yPos, zPos, scale, rotate ) {
-    var file_texture = 'textures/' + fileTexture;
-    var file_obj = 'animated_models/' + fileObj;
-
-    var objLoader = new THREE.OBJLoader();                
+SystemSettings.addMTLObjectFromFile = function( fileTexture, fileObj, xPos, yPos, zPos, scale, rotateX, rotateY ) {
     var mtlLoader = new THREE.MTLLoader();
-    mtlLoader.load( file_texture, function( materials ) {
+    mtlLoader.setBaseUrl( 'textures/' );
+    mtlLoader.setPath( 'textures/' );
+    mtlLoader.load( fileTexture, function( materials ) {
+
         materials.preload();
+
         var objLoader = new THREE.OBJLoader();
-        objLoader.setMaterials( materials );
-        objLoader.load( file_obj, function ( object ) {
+        // objLoader.setMaterials( materials );
+        objLoader.setPath( 'animated_models/' );
+        objLoader.load( fileObj, function ( object ) {
+
             object.position.set(xPos, yPos, zPos);
             object.scale.multiplyScalar(scale);
-            object.rotation.y = rotate * Math.PI/2;
+            object.rotation.x = rotateX * Math.PI / 2;
+            object.rotation.y = rotateY * Math.PI / 2;
+            object.traverse(function (child) {
+                if (child instanceof THREE.Mesh) {
+                    child.material = materials;
+                }
+            });
             Scene.addObject( object );
-        }
-        )});
+
+        });
+
+    });
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -185,12 +197,20 @@ SystemSettings.level0 = {
         Scene.addObject( plane );
       
         // diablo: 
-        SystemSettings.addObjectFromFile( 'diablo.jpg', 'diablo.obj', 0, 10, 0, 40, 0 );
+        SystemSettings.addObjectFromFile( 'diablo.jpg', 'diablo.obj', 50, 10, -50, 45, 0, 3);
 
         // batman
-        SystemSettings.addObjectFromFile( 'batman_body.png', 'batman.obj', 0, 0.5, 15, 0.1, 1 );
+        SystemSettings.addObjectFromFile( 'batman_body.png', 'batman.obj', 35, 0.5, -50, 0.1, 1, 0 );
 
-        // printer
+        // bus
+        SystemSettings.addObjectFromFile( 'bus.png', 'bus.obj', -85, 0, 0, 45, 0, 0 );
+
+        // bear
+        SystemSettings.addMTLObjectFromFile( 'bear.mtl', 'bear.obj', 280, 0, 110, 1, 0, 2 );
+
+        SystemSettings.addMTLObjectFromFile( 'lego_people_obj.mtl', 'lego_people_obj.obj', 0, 0, 0, 1, 0, 0 );
+
+
         // SystemSettings.addMTLObjectFromFile( 'smallprinter.obj.mtl', 'smallprinter.obj', 20, 0, 20, 1, 0 );        
 
 
@@ -357,10 +377,12 @@ SystemSettings.level1 = {
         Scene.addObject( goal );
 
         // Coco: 
-        SystemSettings.addMTLObjectFromFile( 'coco_head.mtl', 'coco_head.obj', 0, 0, 0, 1, 0 ); 
-        SystemSettings.addMTLObjectFromFile( 'coco_left_foot.mtl', 'coco_left_foot.obj', 0, 0, 0, 1, 0 ); 
-        SystemSettings.addMTLObjectFromFile( 'coco_right_foot.mtl', 'coco_right_foot.obj', 0, 0, 0, 1, 0 ); 
-        SystemSettings.addMTLObjectFromFile( 'coco_main.mtl', 'coco_main.obj', 0, 0, 0, 1, 0 ); 
+        // SystemSettings.addMTLObjectFromFile( 'coco_head.mtl', 'coco_head.obj', 0, 0, 0, 1, 0 ); 
+        // SystemSettings.addMTLObjectFromFile( 'coco_left_foot.mtl', 'coco_left_foot.obj', 0, 0, 0, 1, 0 ); 
+        // SystemSettings.addMTLObjectFromFile( 'coco_right_foot.mtl', 'coco_right_foot.obj', 0, 0, 0, 1, 0 ); 
+        // SystemSettings.addMTLObjectFromFile( 'coco_main.mtl', 'coco_main.obj', 0, 0, 0, 1, 0 ); 
+
+         
 
         // creating eating club
         this.walls[0] = SystemSettings.createWall(10, 290, -195, 15);
