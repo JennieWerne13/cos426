@@ -39,10 +39,10 @@ Scene.setupLighting = function() {
         bias = -0.0000001;
     }
     else if (Game.level == 1 || Game.level == 2) {
-        bias = 0.1;
+        bias = 0.2;
     }
     else if (Game.level == 3) {
-        bias = -0.00001;
+        bias = 0.1;
     }
 
     this._light[2] = new THREE.SpotLight( 0xffffff, 0.5 );
