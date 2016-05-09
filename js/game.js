@@ -217,6 +217,7 @@ Game.openStoryline = function() {
     document.getElementById("storypage").style.width = window.innerWidth + "px";
     document.getElementById("storypage").style.backgroundColor = "red";
     document.getElementById("gamediv").style.display = "none";
+    document.getElementById("canvas").style.display = "none";
 	document.getElementById("storyline" + this.level + "-" + this.storylinePage).style.display = "block";
 }
 
@@ -258,6 +259,7 @@ Game.playGame = function () {
 	document.getElementById("storypage").style.display = "none";
 
 	document.getElementById("gamediv").style.display = "block";
+	 document.getElementById("canvas").style.display = "block";
 
 	// Add particle system
 	Game.goToLevel(this.level);
@@ -279,6 +281,7 @@ Game.wonGame = function() {
     document.getElementById("storypage").style.width = window.innerWidth + "px";
     document.getElementById("storypage").style.backgroundColor = "red";
     document.getElementById("gamediv").style.display = "none";
+     document.getElementById("canvas").style.display = "none";
 	document.getElementById("youwon").style.display = "block";
 }
 
@@ -289,5 +292,6 @@ Game.lostGame = function() {
     document.getElementById("storypage").style.width = window.innerWidth + "px";
     document.getElementById("storypage").style.backgroundColor = "red";
     document.getElementById("gamediv").style.display = "none";
+     document.getElementById("canvas").style.display = "none";
 	document.getElementById("youlost").style.display = "block";
 }

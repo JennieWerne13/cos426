@@ -78,7 +78,7 @@ Renderer.onWindowResize = function () {
     Renderer._camera.updateProjectionMatrix();
 
     Renderer._renderer.setSize( Renderer._width, Renderer._height );
-    document.getElementById("topdiv").style.height = window.innerHeight*0.225 + "px"; // SARAH
+    document.getElementById("topbar").style.height = window.innerHeight*0.225 + "px"; // SARAH
 };
 
 // THIS IS THE IMPORTANT FUNCTION

@@ -49,16 +49,16 @@ Collisions.BounceBox = function (particleAttributes, alive, delta_t, box, dampin
 
         var p = pos.clone().add(vel.clone().multiplyScalar(delta_t));
         
-        if (p.x > box.xmin && p.x < box.xmax && p.y > box.ymin && p.y < box.ymax && p.z > box.zmin && p.z < box.zmax) {
+        if (p.x >= box.xmin && p.x <= box.xmax && p.y >= box.ymin && p.y <= box.ymax && p.z >= box.zmin && p.z <= box.zmax) {
 
-            if (pos.x < box.xmin) bounceParticle(pos,vel,delta_t,new THREE.Vector4(-1,0,0,box.xmin),damping,i,positions,velocities);
-            else if (pos.y < box.ymin) bounceParticle(pos,vel,delta_t,new THREE.Vector4(0,-1,0,box.ymin),damping,i,positions,velocities);
-            else if (pos.z < box.zmin) bounceParticle(pos,vel,delta_t,new THREE.Vector4(0,0,-1,box.zmin),damping,i,positions,velocities);
+            if (pos.x <= box.xmin) bounceParticle(pos,vel,delta_t,new THREE.Vector4(-1,0,0,box.xmin),damping,i,positions,velocities);
+            else if (pos.y <= box.ymin) bounceParticle(pos,vel,delta_t,new THREE.Vector4(0,-1,0,box.ymin),damping,i,positions,velocities);
+            else if (pos.z <= box.zmin) bounceParticle(pos,vel,delta_t,new THREE.Vector4(0,0,-1,box.zmin),damping,i,positions,velocities);
 
-            else if (pos.x > box.xmax) bounceParticle(pos,vel,delta_t,new THREE.Vector4(1,0,0,box.xmax),damping,i,positions,velocities);
-            else if (pos.y > box.ymax) bounceParticle(pos,vel,delta_t,new THREE.Vector4(0,1,0,box.ymax),damping,i,positions,velocities);
-            else if (pos.z > box.zmax) bounceParticle(pos,vel,delta_t,new THREE.Vector4(0,0,1,box.zmax),damping,i,positions,velocities);
-            else killPartilce(i, particleAttributes, alive);
+            else if (pos.x >= box.xmax) bounceParticle(pos,vel,delta_t,new THREE.Vector4(1,0,0,box.xmax),damping,i,positions,velocities);
+            else if (pos.y >= box.ymax) bounceParticle(pos,vel,delta_t,new THREE.Vector4(0,1,0,box.ymax),damping,i,positions,velocities);
+            else if (pos.z >= box.zmax) bounceParticle(pos,vel,delta_t,new THREE.Vector4(0,0,1,box.zmax),damping,i,positions,velocities);
+            else { pos.sub(vel.clone().multiplyScalar(delta_t)); setElement( i, positions, pos ); console.log(2);}
         }
     }
 }
@@ -102,26 +102,6 @@ sinkParticle = function(pos,vel,delta_t,plane,damping,i,particleAttributes,alive
     }
 }
 
-// bounceParticle = function(pos,vel,delta_t,plane,damping,i,positions,velocities) {
-
-//     var planeN = new THREE.Vector3(plane.x,plane.y,plane.z);
-
-//     var tmp = pos.clone();
-//     tmp.sub(planeN.clone().multiply(planeN).multiplyScalar(plane.w));
-//     tmp.add(vel.clone().multiplyScalar(delta_t));
-//     var finalDir = tmp.dot(planeN);
-
-//     if (finalDir < 0.0) {
-//         vel_new = reflectVelocityAcrossNormal(vel,planeN,damping);
-//         pos = reflectPositionAcrossNormal(pos,vel,vel_new,delta_t,plane,planeN)
-//         vel = vel_new;
-
-//     }
-
-//     setElement( i, positions, pos );
-//     setElement( i, velocities, vel );
-// }
-
 bounceParticle = function(pos,vel,delta_t,plane,damping,i,positions,velocities) {
 
     var planeN = new THREE.Vector3(plane.x,plane.y,plane.z);
@@ -133,14 +113,29 @@ bounceParticle = function(pos,vel,delta_t,plane,damping,i,positions,velocities) 
 
     if (finalDir < 0.0) {
         vel_new = reflectVelocityAcrossNormal(vel,planeN,damping);
-        pos = reflectPositionAcrossNormal(pos,vel,vel_new,delta_t,plane,planeN)
         vel = vel_new;
-
     }
-
+    
     setElement( i, positions, pos );
     setElement( i, velocities, vel );
 }
+
+// bounceParticle = function(pos,vel,delta_t,plane,damping,i,positions,velocities) {
+
+//     var planeN = new THREE.Vector3(plane.x,plane.y,plane.z);
+
+//     var tmp = pos.clone();
+//     tmp.sub(planeN.clone().multiply(planeN).multiplyScalar(plane.w));
+//     tmp.add(vel.clone().multiplyScalar(delta_t));
+//     var finalDir = tmp.dot(planeN);
+
+//     if (finalDir < 0.0) {
+//         vel_new = reflectVelocityAcrossNormal(vel,planeN,damping);
+//         vel = vel_new;
+//     }
+
+//     setElement( i, velocities, vel );
+// }
 
 
 Collisions.BouncePlane = function ( particleAttributes, alive, delta_t, plane,damping ) {
@@ -353,11 +348,11 @@ EulerUpdater.prototype.updateLifetimes = function ( particleAttributes, alive, d
 
         var lifetime = getElement( i, lifetimes );
 
-        if ( lifetime < 0 ) {
-            killPartilce( i, particleAttributes, alive );
-        } else {
-            setElement( i, lifetimes, lifetime - delta_t );
-        }
+        // if ( lifetime < 0 ) {
+        //     killPartilce( i, particleAttributes, alive );
+        // } else {
+        //     setElement( i, lifetimes, lifetime - delta_t );
+        // }
     }
 
 };
@@ -464,7 +459,7 @@ TargetUpdater0.prototype.updateVelocities = function ( particleAttributes, alive
 
         if (Math.random() < 0.1) {
             var scal = 10.0;
-            v.add(new THREE.Vector3(scal*(Math.random() - 0.5),0,scal*(Math.random()) - 0.5));
+            v.add(new THREE.Vector3(scal*(Math.random() - 0.5),0,scal*(Math.random() - 0.5))); // FIX SARAH 
         }
 
         setElement( i, velocities, v );
@@ -527,11 +522,11 @@ TargetUpdater0.prototype.updateLifetimes = function ( particleAttributes, alive,
 
         var lifetime = getElement( i, lifetimes );
 
-        if ( lifetime < 0 ) {
-            killPartilce( i, particleAttributes, alive );
-        } else {
-            setElement( i, lifetimes, lifetime - delta_t );
-        }
+        // if ( lifetime < 0 ) {
+        //     killPartilce( i, particleAttributes, alive );
+        // } else {
+        //     setElement( i, lifetimes, lifetime - delta_t );
+        // }
     }
 
 };
@@ -705,11 +700,11 @@ TargetUpdater1.prototype.updateLifetimes = function ( particleAttributes, alive,
 
         var lifetime = getElement( i, lifetimes );
 
-        if ( lifetime < 0 ) {
-            killPartilce( i, particleAttributes, alive );
-        } else {
-            setElement( i, lifetimes, lifetime - delta_t );
-        }
+        // if ( lifetime < 0 ) {
+        //     killPartilce( i, particleAttributes, alive );
+        // } else {
+        //     setElement( i, lifetimes, lifetime - delta_t );
+        // }
     }
 
 };
@@ -883,11 +878,11 @@ TargetUpdater2.prototype.updateLifetimes = function ( particleAttributes, alive,
 
         var lifetime = getElement( i, lifetimes );
 
-        if ( lifetime < 0 ) {
-            killPartilce( i, particleAttributes, alive );
-        } else {
-            setElement( i, lifetimes, lifetime - delta_t );
-        }
+        // if ( lifetime < 0 ) {
+        //     killPartilce( i, particleAttributes, alive );
+        // } else {
+        //     setElement( i, lifetimes, lifetime - delta_t );
+        // }
     }
 
 };
@@ -1061,11 +1056,11 @@ TargetUpdater3.prototype.updateLifetimes = function ( particleAttributes, alive,
 
         var lifetime = getElement( i, lifetimes );
 
-        if ( lifetime < 0 ) {
-            killPartilce( i, particleAttributes, alive );
-        } else {
-            setElement( i, lifetimes, lifetime - delta_t );
-        }
+        // if ( lifetime < 0 ) {
+        //     killPartilce( i, particleAttributes, alive );
+        // } else {
+        //     setElement( i, lifetimes, lifetime - delta_t );
+        // }
     }
 
 };
