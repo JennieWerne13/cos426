@@ -137,7 +137,6 @@ SystemSettings.addMTLObjectFromFile = function( fileTexture, fileObj, xPos, yPos
         });
 
     });
-
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -232,7 +231,7 @@ SystemSettings.level0 = {
         SystemSettings.addObjectFromFile( 'diablo.jpg', 'diablo.obj', 50, 10, -50, 45, 0, 3);
 
         // batman
-        SystemSettings.addObjectFromFile( 'batman_body.png', 'batman.obj', 35, 0.7, -50, 0.1, 1, 0 );
+        SystemSettings.addObjectFromFile( 'batman_body.png', 'batman.obj', 35, 1.5, -52, 0.1, 1, 0 );
 
         // bus
         SystemSettings.addObjectFromFile( 'bus.png', 'bus.obj', -85, 0, 0, 45, 0, 0 );
@@ -246,35 +245,26 @@ SystemSettings.level0 = {
         // BB8
         SystemSettings.addObjectFromFile( 'bb8.jpg', 'bb8.obj', 100, 0, 120, 0.25, 0, 3 );
 
-        // Iron Man
-        // SystemSettings.addObjectFromFile( 'iron_man.png', 'iron_man.obj', 220,0,-70, 17, 0, 3 );
-
-        // Deadpool
-        // SystemSettings.addObjectFromFile( 'deadpool.png', 'deadpool.obj', 0, 0, 0, 0.30, 0, 0 );
-
-        // Flash
-        // SystemSettings.addObjectFromFile( 'flash.png', 'flash.obj', 0, 0, 0, 3, 0, 3 );
-
-        // mario
+        // Mario
         // SystemSettings.addObjectFromFile( 'mario.jpg', 'mario.obj', 0, 0, 0, 0.18, 0, 0 );
 
-        // luigi
+        // Luigi
         // SystemSettings.addObjectFromFile( 'luigi.jpg', 'luigi.obj', 0, 0, 0, 0.18, 0, 0 );
 
-        // shockwave
+        // Shockwave
         // SystemSettings.addObjectFromFile( 'shockwave.bmp', 'shockwave.obj', 0, 0, 0, 17, 0, 0 );
 
-        // spiderman
+        // Spiderman
         // SystemSettings.addObjectFromFile( 'spiderman.jpg', 'spiderman.obj', 0, 0, 0, 7, 0, 0 );        
 
         // chair
         // SystemSettings.addObjectFromFile( 'chair.jpg', 'chair.obj', 0, 7.5, 0, 0.75, 0, 0 ); 
 
         // spongebob
-        // SystemSettings.addObjectFromFile( 'spongebob.jpg', 'spongebob.obj', 0, 0, 0, 17, 0, 0 );         
+        // SystemSettings.addObjectFromFile( 'spongebob.jpg', 'spongebob.obj', 0, 0, 0, 17, 0, 0 );
 
         // mr. krabs
-        // SystemSettings.addObjectFromFile( 'mr_krabs.png', 'mr_krabs.obj', 0, 0, 0, 13, 0, 0 ); 
+        // SystemSettings.addObjectFromFile( 'mr_krabs.png', 'mr_krabs.obj', 0, 0, 0, 13, 0, 0 );
 
         // patrick
         // SystemSettings.addObjectFromFile( 'patrick.jpg', 'patrick.obj', 0, 0, 0, 13, 0, 0 );
@@ -282,17 +272,8 @@ SystemSettings.level0 = {
         // pizza
         // SystemSettings.addObjectFromFile( 'pizza.png', 'pizza.obj', 0, 0, 0, 20, 0, 0 );
 
-        // desk
-        // SystemSettings.addObjectFromFile( 'desk.jpg', 'desk.obj', 0, 0, 30, 0.1, 0, 0 ); 
-
-        // printer: +3, +8.5, +5, 0.13, 0, 0 (relative to desk)
-        // SystemSettings.addObjectFromFile( 'printer.jpg', 'printer.obj', 3, 8.5, 35, 0.13, 0, 0 );
-
-        // computer: -3, +6.8, +2, 0.7, 0, 0 (relative to desk)
-        // SystemSettings.addObjectFromFile( 'computer.jpg', 'computer.obj', -3, 6.8, 32, 0.7, 0, 0 );
-
         // Professor
-        SystemSettings.addObjectFromFile( 'professor.png', 'professor.obj', 0, 0, 0, 7, 0, 0 );
+        // SystemSettings.addObjectFromFile( 'professor.png', 'professor.obj', 0, 0, 0, 7, 0, 0 );
 
         // creating a maze
         this.walls[0] = SystemSettings.createWall(60, 10, 0, 155);
@@ -469,17 +450,37 @@ SystemSettings.level1 = {
 
         Scene.addObject( goal );
 
-        // Coco: 
-        // SystemSettings.addMTLObjectFromFile( 'coco_head.mtl', 'coco_head.obj', 0, 0, 0, 1, 0 ); 
-        // SystemSettings.addMTLObjectFromFile( 'coco_left_foot.mtl', 'coco_left_foot.obj', 0, 0, 0, 1, 0 ); 
-        // SystemSettings.addMTLObjectFromFile( 'coco_right_foot.mtl', 'coco_right_foot.obj', 0, 0, 0, 1, 0 ); 
-        // SystemSettings.addMTLObjectFromFile( 'coco_main.mtl', 'coco_main.obj', 0, 0, 0, 1, 0 ); 
-
+        // Storm
+        SystemSettings.addObjectFromFile( 'storm.png', 'storm.obj', 180, 0, 140, 0.1, 0, 2.5); // GOAL
          
+        // Iron Man
+        SystemSettings.addObjectFromFile( 'iron_man.png', 'iron_man.obj', -170, 0, 140, 17, 0, 1.5);
+
+        // Deadpool
+        SystemSettings.addObjectFromFile( 'deadpool.png', 'deadpool.obj', -80, 0, -110, 0.30, 0, 3.25);
+
+        // Flash
+        SystemSettings.addObjectFromFile( 'flash.png', 'flash.obj', -30, 0, -110, 3, 0, 3.5);
+
+        // spiderman
+        SystemSettings.addObjectFromFile( 'spiderman.jpg', 'spiderman.obj', 170, 0, -110, 7, 0, -0.5);        
+
+        // shockwave
+        SystemSettings.addObjectFromFile( 'shockwave.bmp', 'shockwave.obj', 180, 0, 40, 17, 0, 1);
+
+        // pizza
+        SystemSettings.addObjectFromFile( 'pizza.png', 'pizza.obj', -20, 0, 150, 20, 0, 0 );
 
         // main dining area 
-        // table 
-        SystemSettings.addObjectFromFile( 'wood_table.jpg', 'table.obj', 100, 6, -75, 0.25, 0); 
+        // table #1 
+        SystemSettings.addObjectFromFile( 'wood_table.jpg', 'table.obj', 85, 5, -100, 0.125, 0, 1); 
+
+        SystemSettings.addObjectFromFile( 'wood_table.jpg', 'table.obj', 85, 5, -75, 0.125, 0, 1); 
+
+        // table #2
+        SystemSettings.addObjectFromFile( 'wood_table.jpg', 'table.obj', 115, 5, -100, 0.125, 0, 1); 
+
+        SystemSettings.addObjectFromFile( 'wood_table.jpg', 'table.obj', 115, 5, -75, 0.125, 0, 1);
 
         // creating eating club
         this.walls[0] = SystemSettings.createWall(10, 290, -195, 15);
@@ -586,6 +587,36 @@ SystemSettings.level2 = {
         goal.position.set(180, 2, 140);
 
         Scene.addObject( goal );
+
+        // Storm
+        SystemSettings.addObjectFromFile( 'storm.png', 'storm.obj', 180, 0, 140, 0.1, 0, 2.5); // GOAL
+         
+        // Iron Man
+        SystemSettings.addObjectFromFile( 'iron_man.png', 'iron_man.obj', -170, 0, 140, 17, 0, 1.5);
+
+        // Deadpool
+        SystemSettings.addObjectFromFile( 'deadpool.png', 'deadpool.obj', -80, 0, -110, 0.30, 0, 3.25);
+
+        // Flash
+        SystemSettings.addObjectFromFile( 'flash.png', 'flash.obj', -30, 0, -110, 3, 0, 3.5);
+
+        // spiderman
+        SystemSettings.addObjectFromFile( 'spiderman.jpg', 'spiderman.obj', 170, 0, -110, 7, 0, -0.5);        
+
+        // shockwave
+        SystemSettings.addObjectFromFile( 'shockwave.bmp', 'shockwave.obj', 180, 0, 40, 17, 0, 1);
+
+        // main dining area 
+        // table #1 
+        SystemSettings.addObjectFromFile( 'wood_table.jpg', 'table.obj', 85, 5, -100, 0.125, 0, 1); 
+
+        SystemSettings.addObjectFromFile( 'wood_table.jpg', 'table.obj', 85, 5, -75, 0.125, 0, 1); 
+
+        // table #2
+        SystemSettings.addObjectFromFile( 'wood_table.jpg', 'table.obj', 115, 5, -100, 0.125, 0, 1); 
+
+        SystemSettings.addObjectFromFile( 'wood_table.jpg', 'table.obj', 115, 5, -75, 0.125, 0, 1); 
+
 
         // creating eating club
         this.walls[0] = SystemSettings.createWall(10, 290, -195, 15);
@@ -695,13 +726,15 @@ SystemSettings.level3 = {
 
         Scene.addObject( plane );
 
-        // create goal
-        var goal_material = new THREE.MeshPhongMaterial( {color: 0xF2EA64, emissive: 0x222222, side: THREE.DoubleSide } );
-        var goal_geo = new THREE.BoxGeometry(4, 4, 4);
-        var goal = new THREE.Mesh(goal_geo, goal_material);
-        goal.position.set(-280, 2, 0);
+        // desk
+        SystemSettings.addObjectFromFile( 'desk.jpg', 'desk.obj', 20, 0, -115, 0.1, 0, 2 ); 
 
-        Scene.addObject( goal );
+        // printer: +3, +8.5, +5, 0.13, 0, 0 (relative to desk)
+        SystemSettings.addObjectFromFile( 'printer.jpg', 'printer.obj', 23, 8, -120, 0.13, 0, 2 );
+
+        // computer: -3, +6.8, +2, 0.7, 0, 0 (relative to desk)
+        SystemSettings.addObjectFromFile( 'computer.jpg', 'computer.obj', 17, 6.8, -117.5, 0.7, 0, 2 );
+
 
         // creating sceond campus center
         this.walls[0] = SystemSettings.createWall(350, 10, -135, 235);

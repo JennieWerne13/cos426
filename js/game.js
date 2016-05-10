@@ -261,7 +261,13 @@ Game.playGame = function () {
 	document.getElementById("storypage").style.display = "none";
 
 	document.getElementById("gamediv").style.display = "block";
-	 document.getElementById("canvas").style.display = "block";
+
+	document.getElementById("canvas").style.display = "block";
+	
+	document.getElementById("topbar" + this.level).style.display = "block"; // NEETA
+	if (this.level > 0) {
+		document.getElementById("topbar" + (this.level-1)).style.display = "none"; // NEETA
+	}	
 
 	// Add particle system
 	Game.goToLevel(this.level);
