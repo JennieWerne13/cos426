@@ -41,7 +41,7 @@ window.onload = function() {
                         Player.pickUpItem();
                     }
                 }
-                else {
+                else { // RESTRICT THIS SARAH
                     Player.putDownItem();
                 }
             }

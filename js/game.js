@@ -35,17 +35,31 @@ Game.timesUp = function() {
 // What defines the completion of a level? Returns true if the level has been completed, false otherwise. 
 // THIS NEEDS TO BE FILLED IN
 Game.levelCompleted = function() {
-	var bounds = 10;
-	
-	if (Player.position[0] <= Goal.position[0] + bounds && Player.position[0] >= Goal.position[0] - bounds) {
-		if (Player.position[1] <= Goal.position[1] + bounds && Player.position[1] >= Goal.position[1] - bounds) {
-			if (Player.position[2] <= Goal.position[2] + bounds && Player.position[2] >= Goal.position[2] - bounds) {
-				if (Player.pressed) {
-					return true;
+	if (Game.level == 0) {
+		var bounds = 10;
+		
+		if (Player.position[0] <= Goal.position[0] + bounds && Player.position[0] >= Goal.position[0] - bounds) {
+			if (Player.position[1] <= Goal.position[1] + bounds && Player.position[1] >= Goal.position[1] - bounds) {
+				if (Player.position[2] <= Goal.position[2] + bounds && Player.position[2] >= Goal.position[2] - bounds) {
+					if (Player.pressed) {
+						return true;
+					}
 				}
 			}
 		}
+		return false;
 	}
+	else if (Game.level == 1) {
+		var sumtmp = 0;
+		for (var i = 0; i < Player.officersReached.length; i++) {
+			sumtmp += Player.officersReached[i];
+		}
+		if (sumtmp == Player.officersReached.length) {
+			return true;
+		}
+		return false;
+	}
+
 	return false;
 }
 

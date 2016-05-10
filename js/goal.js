@@ -15,6 +15,8 @@ Goal.init = function(level) {
 		// officer 4: [180, 10, 40]   SHOCKWAVE
 		// officer 5: [180, 10, 140] LAST: Storm
 
+		this.officers = [[-170, 10, 140],[-80, 10, -110],[-30, 10, -110],[170, 10, -110],[180, 10, 40],[180, 10, 140]];
+
 		this.position = [180, 10, 140];
 	}
 	else if (level == 3) {
