@@ -440,6 +440,8 @@ TargetUpdater0.prototype.updatePositions = function ( particleAttributes, alive,
         var v = getElement( i, velocities );
         p.add( v.clone().multiplyScalar( delta_t ) );
         setElement( i, positions, p );
+
+        Goal.updatePosition(p.x,p.y,p.z);
     }
 };
 

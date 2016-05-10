@@ -34,6 +34,7 @@ TargetInitializer0.prototype.initializePositions = function ( positions, toSpawn
         var pos = (new THREE.Vector3()).copy(base_pos);
 
         setElement( idx, positions, pos );
+        Goal.updatePosition(pos.x,pos.y,pos.z);
 
     }
     positions.needUpdate = true;

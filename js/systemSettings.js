@@ -146,7 +146,7 @@ SystemSettings.addMTLObjectFromFile = function( fileTexture, fileObj, xPos, yPos
 
 ////////////////////////////////////////////////////////////////////////////////
 // Level 0: NO GRAVITY - IT CREATES BAD ARTIFACTS/MOVEMENTS
-////////////////////////////////////////////////////////////////////////////////
+//////Z//////////////////////////////////////////////////////////////////////////
 
 SystemSettings.level0 = {
 
@@ -157,7 +157,7 @@ SystemSettings.level0 = {
     // Initialization
     initializerFunction : TargetInitializer0,
     initializerSettings : {
-        sphere:   new THREE.Vector4 ( 0.0, 5.0, 0.0, 1.0 ),
+        sphere:   new THREE.Vector4 ( -220.0, 5.0, -70.0, 1.0 ),
         color:    new THREE.Vector4 ( 0.0, 0.0, 1.0, 1.0 ),
         velocity: new THREE.Vector3 ( 0.0, 30.0, 0.0),
         lifetime: 5,
