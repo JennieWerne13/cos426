@@ -321,3 +321,28 @@ button {
      margin: 0 auto;
     text-align: center;
 }
+
+.contains-hero-labels {
+        text-align:center;
+        width: 100%;
+        margin: 20px auto 0px auto;
+    }
+
+    .hero-label-off {
+      width: 150px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      border: 3px solid #123456;
+      background-color: #ffc966;
+      /*float:left;*/
+      margin:0 10px;
+      display: inline-block;
+    }
+
+    .hero-label-text-off {
+      display: inline-block;
+      vertical-align: middle;
+    
+      line-height: normal;
+    }

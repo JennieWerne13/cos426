@@ -60,7 +60,7 @@ Game.levelCompleted = function() {
 		return false;
 	}
 
-	return false;
+	return false; // SARAH, ALLOW ALERTS EVERY TIME OFFICER IS REACHED, CHANGE INSTRUCITONS
 }
 
 // Checks if given position is within bounds, bounds are INCLUSIVE

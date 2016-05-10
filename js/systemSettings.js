@@ -364,13 +364,13 @@ SystemSettings.level1 = {
 
     // Particle material
     particleMaterial :  SystemSettings.standardMaterial,
-    numObjects:         1,
+    numObjects:         0,
 
     // Initialization
     initializerFunction : TargetInitializer1,
     initializerSettings : {
         sphere:   new THREE.Vector4 ( 0.0, 5.0, 0.0, 1.0 ),
-        color:    new THREE.Vector4 ( 0.0, 0.0, 1.0, 1.0 ),
+        color:    new THREE.Vector4 ( 0.0, 0.0, 1.0, 0 ),
         velocity: new THREE.Vector3 ( 0.0, 30.0, 0.0),
         lifetime: 5,
         size:     10.0,

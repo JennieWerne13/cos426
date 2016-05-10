@@ -42,6 +42,9 @@ Player.putDownItem = function() {
 			if (Player.officersReached[i] == 0 && Math.abs(this.pizzaLocation[0] - Goal.officers[i][0]) < 20 && Math.abs(this.pizzaLocation[2] - Goal.officers[i][2]) < 20) {
 				Player.officersReached[i] = 1;
 				// alert player that they have reached officer
+				// font-weight: bold;
+				document.getElementById("superhero" + i).style.fontWeight = "bold";
+				document.getElementById("superhero" + i).style.backgroundColor = "#e59400";
 			}
 		}
 	}
@@ -123,7 +126,6 @@ Player.turnLeft = function(amount) {
 		var rottmp = [0,0];
 		rottmp[0] = Math.cos(Player.orientation[1])*tmp[1] + Math.sin(Player.orientation[1])*tmp[0];
 		rottmp[1] = -Math.sin(Player.orientation[1])*tmp[1] + Math.cos(Player.orientation[1])*tmp[0];
-		console.log(rottmp);
 		Scene._scene.getObjectByName('pizza.obj').position.set(Player.position[0] + rottmp[0],Player.position[1]-3.0,Player.position[2] + rottmp[1]);
 		Scene._scene.getObjectByName('pizza.obj').rotation.set(Player.orientation[0], Player.orientation[1] + Math.PI, Player.orientation[2]);
 	}
@@ -137,7 +139,6 @@ Player.turnRight = function(amount) {
 		var rottmp = [0,0];
 		rottmp[0] = Math.cos(Player.orientation[1])*tmp[1] + Math.sin(Player.orientation[1])*tmp[0];
 		rottmp[1] = -Math.sin(Player.orientation[1])*tmp[1] + Math.cos(Player.orientation[1])*tmp[0];
-		console.log(rottmp);
 		Scene._scene.getObjectByName('pizza.obj').position.set(Player.position[0] + rottmp[0],Player.position[1]-3.0,Player.position[2] + rottmp[1]);
 		Scene._scene.getObjectByName('pizza.obj').rotation.set(Player.orientation[0], Player.orientation[1] + Math.PI, Player.orientation[2]);
 	}
