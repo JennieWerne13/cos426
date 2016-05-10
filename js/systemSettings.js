@@ -602,6 +602,15 @@ SystemSettings.level2 = {
 
         SystemSettings.addObjectFromFile( 'wood_table.jpg', 'table.obj', 115, 5, -75, 0.125, 0, 1); 
 
+        // desk -30 -25
+        SystemSettings.addObjectFromFile( 'desk.jpg', 'desk.obj', -30, 0, -25, 0.1, 0, 0 ); 
+
+        // printer: +3, +8, +5, 0.13, 0, 0 (relative to desk) -- FINAL GOAL
+        SystemSettings.addObjectFromFile( 'printer.jpg', 'printer.obj', -33, 8, -20, 0.13, 0, 0 );
+
+        // computer: -3, +6.8, +2, 0.7, 0, 0 (relative to desk)
+        SystemSettings.addObjectFromFile( 'computer.jpg', 'computer.obj', -27, 6.8, -22.5, 0.7, 0, 0 );
+
 
         // creating eating club
         this.walls[0] = SystemSettings.createWall(10, 290, -195, 15);
