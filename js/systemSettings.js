@@ -507,7 +507,7 @@ SystemSettings.level2 = {
 
     // Particle material
     particleMaterial :  SystemSettings.standardMaterial,
-    numObjects:         1,
+    numObjects:         0,
 
     // Initialization
     initializerFunction : TargetInitializer2,

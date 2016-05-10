@@ -23,6 +23,7 @@ Game.progressToNextLevel = function() {
 	else {
 		this.wonGame();
 	}
+	if (this.level == 2) Player.pressed = true;
 }
 
 // Based on timer 
@@ -56,6 +57,19 @@ Game.levelCompleted = function() {
 		}
 		if (sumtmp == Player.officersReached.length) {
 			return true;
+		}
+		return false;
+	}
+	else if (Game.level == 2) {
+		var sumtmp = 0;
+		for (var i = 0; i < Player.officersReached.length; i++) {
+			sumtmp += Player.officersReached[i];
+		}
+		if (sumtmp == Player.officersReached.length) {
+			if (Player.reachedPrinter) {
+				return true;
+			}
+			return false;
 		}
 		return false;
 	}

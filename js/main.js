@@ -45,6 +45,15 @@ window.onload = function() {
                     Player.putDownItem();
                 }
             }
+            else if (Game.level == 2) {
+                var bounds = 20;
+                if (Math.abs(Player.position[0] - Goal.position[0]) < bounds && Math.abs(Player.position[2] - Goal.position[2]) < bounds) {
+                    Player.putDownItem();
+                }
+                else {
+                    Player.pickUpItem();
+                }
+            }
         }
     });
 
