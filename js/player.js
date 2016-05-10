@@ -2,7 +2,8 @@ var Player = Player || {};
 
 Player.init = function() {
 	Player.position = [0,10,149]; // JENNIE: being higher up wastes less space on bottom
-	Player.orientation = [0,0,0];
+	var rand = Math.random() * 0.1 - 0.05;
+	Player.orientation = [0,rand,0];
 	Player.pressed = false;
 	Player.pizzaLocation = [-10, 0, 130];
 	Player.officersReached = [0,0,0,0,0,0]; 
