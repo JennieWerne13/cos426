@@ -280,7 +280,7 @@ SystemSettings.level0 = {
         // SystemSettings.addObjectFromFile( 'patrick.jpg', 'patrick.obj', 0, 0, 0, 13, 0, 0 );
 
         // pizza
-        // SystemSettings.addObjectFromFile( 'pizza.png', 'pizza.obj', 0, 0, 0, 20, 0, 0 );
+        // SystemSettings.addObjectFromFile( 'pizza.png', 'pizza.obj', 0, 0, 0, 23, 0, 2 );
 
         // Professor
         // SystemSettings.addObjectFromFile( 'professor.png', 'professor.obj', 0, 0, 0, 7, 0, 0 );
@@ -488,7 +488,7 @@ SystemSettings.level1 = {
         SystemSettings.addObjectFromFile( 'shockwave.bmp', 'shockwave.obj', 180, 0, 40, 17, 0, 1);
 
         // pizza
-        SystemSettings.addObjectFromFile( 'pizza.png', 'pizza.obj', -20, 0, 150, 20, 0, 0 );
+        SystemSettings.addObjectFromFile( 'pizza.png', 'pizza.obj', -10, 0, 130, 23, 0, 2 );
 
         // main dining area 
         // table #1 
