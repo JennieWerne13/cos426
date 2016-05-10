@@ -934,6 +934,21 @@ TargetUpdater3.prototype.updatePositions = function ( particleAttributes, alive,
         var v = getElement( i, velocities );
         p.add( v.clone().multiplyScalar( delta_t ) );
         setElement( i, positions, p );
+             
+        Player.professorPosition[0] = p.x;
+        Player.professorPosition[1] = p.y;
+        Player.professorPosition[2] = p.z;
+
+        try {
+            Scene._scene.getObjectByName('professor.obj').position.set(p.x,p.y,p.z);
+            var tmp1 = Scene._scene.getObjectByName('professor.obj').rotation._x;
+            var tmp2 = Scene._scene.getObjectByName('professor.obj').rotation._y;
+            var tmp3 = Scene._scene.getObjectByName('professor.obj').rotation._z;
+            Scene._scene.getObjectByName('professor.obj').rotation.set(0, tmp2 + 0.01, 0);
+        }
+        catch(err) {
+            continue;
+        }
     }
 };
 
@@ -951,13 +966,9 @@ TargetUpdater3.prototype.updateVelocities = function ( particleAttributes, alive
         var v = getElement( i, velocities );
         // now update velocity based on forces...
 
-        if (Math.random() < 0.7) {
-            var scal = 10.0;
-            v.add(new THREE.Vector3(scal*(Math.random() - 0.5),0,scal*(Math.random()) - 0.5));
-        }
-        else {
-            var scal = 10.0;
-            v = new THREE.Vector3(scal*(Math.random() - 0.5),0,scal*(Math.random() - 0.5));
+        if (Math.random() < 0.1) {
+            var scal = 5.0;
+            v.add(new THREE.Vector3(scal*(Math.random() - 0.5),0,scal*(Math.random() - 0.5))); // FIX SARAH 
         }
 
         setElement( i, velocities, v );

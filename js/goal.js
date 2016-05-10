@@ -25,7 +25,7 @@ Goal.init = function(level) {
 		this.position = [-33, 8, -20];
 	}
 	else {
-		this.position = [23, 8, -120];
+		this.position = [23, 8, -120]; // printer
 	}
 }
 

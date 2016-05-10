@@ -54,6 +54,10 @@ window.onload = function() {
                     Player.pickUpItem();
                 }
             }
+            else {
+                Player.pickUpItem();
+                setTimeout(function() {Player.putDownItem();}, 3000);
+            }
         }
     });
 

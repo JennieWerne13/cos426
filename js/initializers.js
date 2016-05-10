@@ -345,6 +345,13 @@ TargetInitializer3.prototype.initializePositions = function ( positions, toSpawn
 
         setElement( idx, positions, pos );
 
+        // Goal.updatePosition(pos.x,pos.y,pos.z);
+        Player.professorPosition[0] = pos.x;
+        Player.professorPosition[1] = pos.y;
+        Player.professorPosition[2] = pos.z;
+
+        SystemSettings.addObjectFromFile( 'professor.png', 'professor.obj', -190, 0, -60, 10, 0, 1 );
+        
     }
     positions.needUpdate = true;
 }
@@ -374,7 +381,7 @@ TargetInitializer3.prototype.initializeColors = function ( colors, toSpawn ) {
         var g = Math.min(Math.max(0.0,base_col.y + pixel_var*(Math.random()-0.5)),1.0);
         var b = Math.min(Math.max(0.0,base_col.z + pixel_var*(Math.random()-0.5)),1.0);
 
-        var new_col = new THREE.Vector4(r,g,b,1);
+        var new_col = new THREE.Vector4(r,g,b,0);
 
         // ----------- STUDENT CODE END ------------
 
@@ -424,3 +431,4 @@ TargetInitializer3.prototype.initialize = function ( particleAttributes, toSpawn
 
     this.initializeSizes( particleAttributes.size, toSpawn );
 };
+

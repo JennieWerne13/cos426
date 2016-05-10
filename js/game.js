@@ -23,7 +23,29 @@ Game.progressToNextLevel = function() {
 	else {
 		this.wonGame();
 	}
-	if (this.level == 2) Player.pressed = true;
+
+	Player.position[0] = Renderer._camera.position.x; // JENNIE: being higher up wastes less space on bottom Renderer._camera.position._x
+	Player.position[1] = Renderer._camera.position.y;
+	Player.position[2] = Renderer._camera.position.z;
+	Player.orientation[2] = Renderer._camera.rotation._y;
+	Player.pressed = false;
+	Player.pizzaLocation = [-10, 0, 130];
+	Player.officersReached = [0,0,0,0,0,0]; 
+	Player.reachedPrinter = false;
+}
+
+Game.restartLevel = function() {
+	Player.position = [0,10,149];
+	Player.orientation[2] = 0;
+	Player.pressed = false;
+	Player.pizzaLocation = [-10, 0, 130];
+	Player.officersReached = [0,0,0,0,0,0]; 
+	Player.reachedPrinter = false;
+
+	Renderer._camera.position.set(Player.position[0],Player.position[1],Player.position[2]);
+	Renderer._camera.rotation.set(Player.position[0],Player.position[1],Player.position[2]);
+
+	Game.playGame();
 }
 
 // Based on timer 
@@ -70,6 +92,20 @@ Game.levelCompleted = function() {
 				return true;
 			}
 			return false;
+		}
+		return false;
+	}
+	else if (Game.level == 3) {
+		var bounds = 10;
+		
+		if (Player.position[0] <= Goal.position[0] + bounds && Player.position[0] >= Goal.position[0] - bounds) {
+			if (Player.position[1] <= Goal.position[1] + bounds && Player.position[1] >= Goal.position[1] - bounds) {
+				if (Player.position[2] <= Goal.position[2] + bounds && Player.position[2] >= Goal.position[2] - bounds) {
+					if (Player.pressed) {
+						return true;
+					}
+				}
+			}
 		}
 		return false;
 	}

@@ -660,11 +660,11 @@ SystemSettings.level3 = {
     // Initialization
     initializerFunction : TargetInitializer3,
     initializerSettings : {
-        sphere:   new THREE.Vector4 ( 0.0, 5.0, 0.0, 1.0 ),
-        color:    new THREE.Vector4 ( 0.0, 0.0, 1.0, 1.0 ),
+        sphere:   new THREE.Vector4 ( -190, 0.0, -60.0, 1.0 ),
+        color:    new THREE.Vector4 ( 0.0, 0.0, 1.0, 0.0 ),
         velocity: new THREE.Vector3 ( 0.0, 30.0, 0.0),
         lifetime: 5,
-        size:     10.0,
+        size:     0.0,
     },
 
     // Update
@@ -756,8 +756,8 @@ SystemSettings.level3 = {
         // patrick
         SystemSettings.addObjectFromFile( 'patrick.jpg', 'patrick.obj', -50, 0, -180, 18, 0, 3 );
 
-        // Professor -- GOAL
-        SystemSettings.addObjectFromFile( 'professor.png', 'professor.obj', -190, 0, -60, 10, 0, 1 );
+        // // Professor -- GOAL
+        // SystemSettings.addObjectFromFile( 'professor.png', 'professor.obj', -190, 0, -60, 10, 0, 1 );
 
 
         // creating sceond campus center

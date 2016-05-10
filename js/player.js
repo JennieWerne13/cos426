@@ -1,13 +1,13 @@
 var Player = Player || {};
 
 Player.init = function() {
-	var rand = Math.random() * 0.1 - 0.05;
 	Player.position = [0,10,149]; // JENNIE: being higher up wastes less space on bottom
-	Player.orientation = [0,rand,0];
+	Player.orientation = [0,0,0];
 	Player.pressed = false;
 	Player.pizzaLocation = [-10, 0, 130];
 	Player.officersReached = [0,0,0,0,0,0]; 
 	Player.reachedPrinter = false;
+	Player.professorPosition = [-190,0,60];
 }
 
 // Update the player's position
@@ -99,7 +99,8 @@ Player.pickUpItem = function() {
 
 				    mesh.castShadow = true;
 				    mesh.receiveShadow = true;
-				    Scene._scene.add( mesh );
+				    Scene.addObject( mesh );
+				    // Scene._scene.add( mesh );
 
 				} );
 			}
@@ -152,11 +153,44 @@ Player.putDownItem = function() {
 
 		    mesh.castShadow = true;
 		    mesh.receiveShadow = true;
-		    Scene._scene.add( mesh );
+		    Scene.addObject( mesh );
 
 		} );
 
 		setTimeout(function() {Player.reachedPrinter = true; },3000);
+	}
+	else if (Game.level == 3) {
+		var loader = new THREE.FontLoader();
+		loader.load( 'js/helvetiker_regular.typeface.js', function ( font ) {
+
+		    var textGeo = new THREE.TextGeometry( "Printing your thesis...", {
+
+		        font: font,
+
+		        size: 1,
+		        height: 0.5,
+		        curveSegments: 12,
+
+		    });
+
+		    textGeo.computeBoundingBox();
+		    var centerOffset = -0.5 * ( textGeo.boundingBox.max.x - textGeo.boundingBox.min.x );
+
+		    var textMaterial = new THREE.MeshPhongMaterial( { color: 0xff00ff, specular: 0x00ffff } );
+
+		    var mesh = new THREE.Mesh( textGeo, textMaterial );
+		    mesh.position.x = Goal.position[0] + 7;
+		    mesh.position.y = 11;
+			mesh.position.z = Goal.position[2];
+			mesh.rotation.y = Math.PI;
+
+		    mesh.castShadow = true;
+		    mesh.receiveShadow = true;
+		    Scene.addObject( mesh );
+
+		} );
+
+		setTimeout(function() {Player.pressed = true; },3000);
 	}
 }
 
