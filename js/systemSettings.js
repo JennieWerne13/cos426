@@ -211,7 +211,7 @@ SystemSettings.level0 = {
     walls         : [],
     createScene : function () {
         // setting up sky
-        var skyGeo = new THREE.PlaneBufferGeometry(1000, 1000, 1, 1);
+        var skyGeo = new THREE.PlaneBufferGeometry(800, 600, 1, 1);
         var skyTexture = new THREE.TextureLoader().load( "textures/space.jpg" );
         var skyMaterial = new THREE.MeshPhongMaterial({ map: skyTexture, side: THREE.DoubleSide });
         var sky = new THREE.Mesh(skyGeo, skyMaterial);
@@ -226,7 +226,7 @@ SystemSettings.level0 = {
         texture.wrapT = THREE.RepeatWrapping;
         texture.repeat.set( 20, 20 );
 
-        var plane_geo = new THREE.PlaneBufferGeometry( 1000, 1000, 1, 1 );
+        var plane_geo = new THREE.PlaneBufferGeometry( 800, 600, 1, 1 );
         var phongGreen     = new THREE.MeshPhongMaterial( {color: 0x003200, emissive: 0x222222, side: THREE.DoubleSide, map: texture} );
 
         var plane     = new THREE.Mesh( plane_geo, phongGreen );
@@ -409,7 +409,7 @@ SystemSettings.level1 = {
 
     createScene : function () {
         // setting up sky
-        var skyGeo = new THREE.PlaneBufferGeometry(1000, 1000, 1, 1);
+        var skyGeo = new THREE.PlaneBufferGeometry(600, 500, 1, 1);
         var skyTexture = new THREE.TextureLoader().load( "textures/sky.jpg" );
         var skyMaterial = new THREE.MeshPhongMaterial({ map: skyTexture, side: THREE.DoubleSide });
         var sky = new THREE.Mesh(skyGeo, skyMaterial);
@@ -423,7 +423,7 @@ SystemSettings.level1 = {
         texture.wrapT = THREE.RepeatWrapping;
         texture.repeat.set( 50, 50 );
 
-        var plane_geo = new THREE.PlaneBufferGeometry( 1000, 1000, 1, 1 );
+        var plane_geo = new THREE.PlaneBufferGeometry( 600, 500, 1, 1 );
         var floor_material     = new THREE.MeshPhongMaterial( {emissive: 0x222222, side: THREE.DoubleSide, map: texture} );
         var plane     = new THREE.Mesh( plane_geo, floor_material );
         plane.rotation.x = -1.57;
@@ -549,7 +549,7 @@ SystemSettings.level2 = {
     walls: [],
     createScene : function () {
         // setting up sky
-        var skyGeo = new THREE.PlaneBufferGeometry(1000, 1000, 1, 1);
+        var skyGeo = new THREE.PlaneBufferGeometry(600, 500, 1, 1);
         var skyTexture = new THREE.TextureLoader().load( "textures/sky.jpg" );
         var skyMaterial = new THREE.MeshPhongMaterial({ map: skyTexture, side: THREE.DoubleSide });
         var sky = new THREE.Mesh(skyGeo, skyMaterial);
@@ -563,7 +563,7 @@ SystemSettings.level2 = {
         texture.wrapT = THREE.RepeatWrapping;
         texture.repeat.set( 50, 50 );
 
-        var plane_geo = new THREE.PlaneBufferGeometry( 1000, 1000, 1, 1 );
+        var plane_geo = new THREE.PlaneBufferGeometry( 600, 500, 1, 1 );
         var floor_material     = new THREE.MeshPhongMaterial( {emissive: 0x222222, side: THREE.DoubleSide, map: texture} );
         var plane     = new THREE.Mesh( plane_geo, floor_material );
         plane.rotation.x = -1.57;
@@ -707,7 +707,7 @@ SystemSettings.level3 = {
     walls : [],
     createScene : function () {
         // setting up sky
-        var skyGeo = new THREE.PlaneBufferGeometry(1000, 1000, 1, 1);
+        var skyGeo = new THREE.PlaneBufferGeometry(700, 900, 1, 1);
         var skyTexture = new THREE.TextureLoader().load( "textures/sky.jpg" );
         var skyMaterial = new THREE.MeshPhongMaterial({ map: skyTexture, side: THREE.DoubleSide });
         var sky = new THREE.Mesh(skyGeo, skyMaterial);
@@ -721,7 +721,7 @@ SystemSettings.level3 = {
         texture.wrapT = THREE.RepeatWrapping;
         texture.repeat.set( 50, 50 );
 
-        var plane_geo = new THREE.PlaneBufferGeometry( 1000, 1000, 1, 1 );
+        var plane_geo = new THREE.PlaneBufferGeometry( 700, 900, 1, 1 );
         var floor_material     = new THREE.MeshPhongMaterial( {emissive: 0x222222, side: THREE.DoubleSide, map: texture} );
         var plane     = new THREE.Mesh( plane_geo, floor_material );
         plane.rotation.x = -1.57;
