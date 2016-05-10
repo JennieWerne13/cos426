@@ -150,13 +150,13 @@ button {
 .subtitle {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    font-size: 20pt;
+    font-size: 16pt;
     text-align: center;
 }
 
 #storyline0-0 {
     display: none;
-    height: 100vh;
+    height: 100%;
 }
 
 #storyline0-1 {
@@ -171,7 +171,6 @@ button {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 50px;
 }
 
 .double-imgs-centered {
@@ -181,8 +180,8 @@ button {
 }
 
 .text {
-    width: 800px;
-    margin: 0 auto;
+    width: 60%;
+    margin: 20px auto;
     display: inline-block;
     padding-top: 50px;
 }
@@ -194,14 +193,18 @@ button {
 
 .left-col {
     float: left;
-    width: 625px;
-    padding-left: 175px;
+    width: 30%;
+    margin-left: 17.5%;
+    margin-right:2.5%;
+    margin-bottom:20px;
 }
 
 .right-col {
-    float: right;
-    width: 625px;
-    padding-right: 175px;
+    float: left;
+    width: 30%;
+    margin-right: 17%;
+    margin-left:3%;
+    margin-bottom:20px;
 }
 
 #topbar {
@@ -213,25 +216,39 @@ button {
     text-align: center;
 }
 
+#storyline0-1 {
+    display: none;
+    /*height: 100vh;*/
+    text-align: center;
+}
+
+#storyline0-2 {
+    display: none;
+    /*height: 100vh;*/
+    text-align: center;
+}
+
 #storyline1-0 {
     display: none;
-    height: 100vh;
+    height: 100%;
     text-align: center;
 }
 
 #storyline1-1 {
     display: none;
+    height: 100%;
     text-align: center;
 }
 
 #storyline1-2 {
     display: none;
+    height: 100%;
     text-align: center;
 }
 
 #storyline2-0 {
     display: none;
-    height: 100vh;
+    /*height: 100vh;*/
     text-align: center;
 }
 
@@ -247,7 +264,7 @@ button {
 
 #storyline3-0 {
     display: none;
-    height: 100vh;
+    /*height: 100vh;*/
     text-align: center;
 }
 
@@ -272,31 +289,31 @@ button {
 #topbar0 {
     display: none;
     padding: 25px;
-    padding-left: 40px;
-    padding-right: 40px;
+    width:80%;
+     margin: 0 auto;
     text-align: center;
 }
 
 #topbar1 {
     display: none;
     padding: 25px;
-    padding-left: 40px;
-    padding-right: 40px;
+    width:80%;
+     margin: 0 auto;
     text-align: center;
 }
 
 #topbar2 {
     display: none;
     padding: 25px;
-    padding-left: 40px;
-    padding-right: 40px;
+    margin: 0 auto;
+    width:80%;
     text-align: center;
 }
 
 #topbar3 {
     display: none;
     padding: 25px;
-    padding-left: 40px;
-    padding-right: 40px;
+    width:80%;
+     margin: 0 auto;
     text-align: center;
 }
