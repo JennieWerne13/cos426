@@ -210,6 +210,16 @@ SystemSettings.level0 = {
     particlesFreq : 500,
     walls         : [],
     createScene : function () {
+        // setting up sky
+        var skyGeo = new THREE.PlaneBufferGeometry(1000, 1000, 1, 1);
+        var skyTexture = new THREE.TextureLoader().load( "textures/space.jpg" );
+        var skyMaterial = new THREE.MeshPhongMaterial({ map: skyTexture, side: THREE.DoubleSide });
+        var sky = new THREE.Mesh(skyGeo, skyMaterial);
+        sky.rotation.x = -1.57;
+        sky.position.y = 60;
+        Scene.addObject(sky);
+
+
         // grass texture of plane
         var texture = new THREE.TextureLoader().load( "textures/grasslight-big.jpg" );
         texture.wrapS = THREE.RepeatWrapping;
@@ -244,36 +254,6 @@ SystemSettings.level0 = {
 
         // BB8
         SystemSettings.addObjectFromFile( 'bb8.jpg', 'bb8.obj', 100, 0, 120, 0.25, 0, 3 );
-
-        // Mario
-        // SystemSettings.addObjectFromFile( 'mario.jpg', 'mario.obj', 0, 0, 0, 0.18, 0, 0 );
-
-        // Luigi
-        // SystemSettings.addObjectFromFile( 'luigi.jpg', 'luigi.obj', 0, 0, 0, 0.18, 0, 0 );
-
-        // Shockwave
-        // SystemSettings.addObjectFromFile( 'shockwave.bmp', 'shockwave.obj', 0, 0, 0, 17, 0, 0 );
-
-        // Spiderman
-        // SystemSettings.addObjectFromFile( 'spiderman.jpg', 'spiderman.obj', 0, 0, 0, 7, 0, 0 );        
-
-        // chair
-        // SystemSettings.addObjectFromFile( 'chair.jpg', 'chair.obj', 0, 7.5, 0, 0.75, 0, 0 ); 
-
-        // spongebob
-        // SystemSettings.addObjectFromFile( 'spongebob.jpg', 'spongebob.obj', 0, 0, 0, 17, 0, 0 );
-
-        // mr. krabs
-        // SystemSettings.addObjectFromFile( 'mr_krabs.png', 'mr_krabs.obj', 0, 0, 0, 13, 0, 0 );
-
-        // patrick
-        // SystemSettings.addObjectFromFile( 'patrick.jpg', 'patrick.obj', 0, 0, 0, 13, 0, 0 );
-
-        // pizza
-        // SystemSettings.addObjectFromFile( 'pizza.png', 'pizza.obj', 0, 0, 0, 20, 0, 0 );
-
-        // Professor
-        // SystemSettings.addObjectFromFile( 'professor.png', 'professor.obj', 0, 0, 0, 7, 0, 0 );
 
         // creating a maze
         this.walls[0] = SystemSettings.createWall(60, 10, 0, 155);
@@ -428,6 +408,15 @@ SystemSettings.level1 = {
     walls: [],
 
     createScene : function () {
+        // setting up sky
+        var skyGeo = new THREE.PlaneBufferGeometry(1000, 1000, 1, 1);
+        var skyTexture = new THREE.TextureLoader().load( "textures/sky.jpg" );
+        var skyMaterial = new THREE.MeshPhongMaterial({ map: skyTexture, side: THREE.DoubleSide });
+        var sky = new THREE.Mesh(skyGeo, skyMaterial);
+        sky.rotation.x = -1.57;
+        sky.position.y = 60;
+        Scene.addObject(sky);
+
         // wood texture of plane
         var texture = new THREE.TextureLoader().load( "textures/wood_floor.jpg" );
         texture.wrapS = THREE.RepeatWrapping;
@@ -443,13 +432,6 @@ SystemSettings.level1 = {
         Scene.addObject( plane );
 
         // create officers
-        var goal_material = new THREE.MeshPhongMaterial( {color: 0xF2EA64, emissive: 0x222222, side: THREE.DoubleSide } );
-        var goal_geo = new THREE.BoxGeometry(4, 4, 4);
-        var goal = new THREE.Mesh(goal_geo, goal_material);
-        goal.position.set(180, 2, 140);
-
-        Scene.addObject( goal );
-
         // Storm
         SystemSettings.addObjectFromFile( 'storm.png', 'storm.obj', 180, 0, 140, 0.1, 0, 2.5); // GOAL
          
@@ -469,7 +451,7 @@ SystemSettings.level1 = {
         SystemSettings.addObjectFromFile( 'shockwave.bmp', 'shockwave.obj', 180, 0, 40, 17, 0, 1);
 
         // pizza
-        SystemSettings.addObjectFromFile( 'pizza.png', 'pizza.obj', -20, 0, 150, 20, 0, 0 );
+        SystemSettings.addObjectFromFile( 'pizza.png', 'pizza.obj', -10, 0, 130, 23, 0, 2 );
 
         // main dining area 
         // table #1 
@@ -566,6 +548,15 @@ SystemSettings.level2 = {
     particlesFreq : 500,
     walls: [],
     createScene : function () {
+        // setting up sky
+        var skyGeo = new THREE.PlaneBufferGeometry(1000, 1000, 1, 1);
+        var skyTexture = new THREE.TextureLoader().load( "textures/sky.jpg" );
+        var skyMaterial = new THREE.MeshPhongMaterial({ map: skyTexture, side: THREE.DoubleSide });
+        var sky = new THREE.Mesh(skyGeo, skyMaterial);
+        sky.rotation.x = -1.57;
+        sky.position.y = 60;
+        Scene.addObject(sky);
+
         // wood texture of plane
         var texture = new THREE.TextureLoader().load( "textures/wood_floor.jpg" );
         texture.wrapS = THREE.RepeatWrapping;
@@ -580,13 +571,7 @@ SystemSettings.level2 = {
 
         Scene.addObject( plane );
 
-        // create goal
-        var goal_material = new THREE.MeshPhongMaterial( {color: 0xF2EA64, emissive: 0x222222, side: THREE.DoubleSide } );
-        var goal_geo = new THREE.BoxGeometry(4, 4, 4);
-        var goal = new THREE.Mesh(goal_geo, goal_material);
-        goal.position.set(180, 2, 140);
-
-        Scene.addObject( goal );
+        // create officers
 
         // Storm
         SystemSettings.addObjectFromFile( 'storm.png', 'storm.obj', 180, 0, 140, 0.1, 0, 2.5); // GOAL
@@ -712,6 +697,15 @@ SystemSettings.level3 = {
     particlesFreq : 500,
     walls : [],
     createScene : function () {
+        // setting up sky
+        var skyGeo = new THREE.PlaneBufferGeometry(1000, 1000, 1, 1);
+        var skyTexture = new THREE.TextureLoader().load( "textures/sky.jpg" );
+        var skyMaterial = new THREE.MeshPhongMaterial({ map: skyTexture, side: THREE.DoubleSide });
+        var sky = new THREE.Mesh(skyGeo, skyMaterial);
+        sky.rotation.x = -1.57;
+        sky.position.y = 60;
+        Scene.addObject(sky);
+        
         // wood texture of plane
         var texture = new THREE.TextureLoader().load( "textures/campus_floor.jpg" );
         texture.wrapS = THREE.RepeatWrapping;
@@ -729,11 +723,32 @@ SystemSettings.level3 = {
         // desk
         SystemSettings.addObjectFromFile( 'desk.jpg', 'desk.obj', 20, 0, -115, 0.1, 0, 2 ); 
 
-        // printer: +3, +8.5, +5, 0.13, 0, 0 (relative to desk)
+        // printer: +3, +8.5, +5, 0.13, 0, 0 (relative to desk) -- 
         SystemSettings.addObjectFromFile( 'printer.jpg', 'printer.obj', 23, 8, -120, 0.13, 0, 2 );
 
         // computer: -3, +6.8, +2, 0.7, 0, 0 (relative to desk)
         SystemSettings.addObjectFromFile( 'computer.jpg', 'computer.obj', 17, 6.8, -117.5, 0.7, 0, 2 );
+
+        // Mario
+        SystemSettings.addObjectFromFile( 'mario.jpg', 'mario.obj', -150, 0, -170, 0.25, 0, 3 );
+
+        // Luigi
+        SystemSettings.addObjectFromFile( 'luigi.jpg', 'luigi.obj', -230, 0, -180, 0.25, 0, 1 );        
+
+        // chair
+        SystemSettings.addObjectFromFile( 'chair.jpg', 'chair.obj', -220, 7.5, -65, 0.75, 0, 3 ); 
+
+        // spongebob
+        SystemSettings.addObjectFromFile( 'spongebob.jpg', 'spongebob.obj', -30, 0, -70, 23, 0, 3 );
+
+        // mr. krabs
+        SystemSettings.addObjectFromFile( 'mr_krabs.png', 'mr_krabs.obj', -75, 0, 60, 17, 0, 3 );
+
+        // patrick
+        SystemSettings.addObjectFromFile( 'patrick.jpg', 'patrick.obj', -50, 0, -180, 18, 0, 3 );
+
+        // Professor -- GOAL
+        SystemSettings.addObjectFromFile( 'professor.png', 'professor.obj', -190, 0, -60, 10, 0, 1 );
 
 
         // creating sceond campus center
