@@ -33,43 +33,43 @@ Scene.setupLighting = function() {
     this._light[1].decay = 2;
     Scene._scene.add( this._light[1]  );
 
-    var bias;
-    // to fix aliasing in shadows
-    if (Game.level == 0) {
-        bias = -0.0000001;
-    }
-    else if (Game.level == 1 || Game.level == 2) {
-        bias = 0.1;
-    }
-    else if (Game.level == 3) {
-        bias = -0.00001;
-    }
+    // var bias;
+    // // to fix aliasing in shadows
+    // if (Game.level == 0) {
+    //     bias = -0.0000001;
+    // }
+    // else if (Game.level == 1 || Game.level == 2) {
+    //     bias = 0.2;
+    // }
+    // else if (Game.level == 3) {
+    //     bias = 0.1;
+    // }
 
-    this._light[2] = new THREE.SpotLight( 0xffffff, 0.5 );
-    this._light[2].position.set( 0, 100, 0 );
-    this._light[2].castShadow = true;
+    // this._light[2] = new THREE.SpotLight( 0xffffff, 0.5 );
+    // this._light[2].position.set( 0, 100, 0 );
+    // this._light[2].castShadow = false;
 
-    this._light[2].shadow.mapSize.width = 1024;
-    this._light[2].shadow.mapSize.height = 1024;
+    // this._light[2].shadow.mapSize.width = 1024;
+    // this._light[2].shadow.mapSize.height = 1024;
 
-    this._light[2].shadow.camera.near = 0.1;
-    this._light[2].shadow.camera.far = 100;
-    this._light[2].shadow.bias = bias;
+    // this._light[2].shadow.camera.near = 0.1;
+    // this._light[2].shadow.camera.far = 100;
+    // this._light[2].shadow.bias = bias;
 
-    Scene._scene.add( this._light[2] );
+    // Scene._scene.add( this._light[2] );
 
-    this._light[3] = new THREE.SpotLight( 0xffffff, 0.5 );
-    this._light[3].position.set( 0, 100, 200 );
-    this._light[3].castShadow = true;
+    // this._light[3] = new THREE.SpotLight( 0xffffff, 0.5 );
+    // this._light[3].position.set( 0, 100, 200 );
+    // this._light[3].castShadow = false;
 
-    this._light[3].shadow.mapSize.width = 1024;
-    this._light[3].shadow.mapSize.height = 1024;
+    // this._light[3].shadow.mapSize.width = 1024;
+    // this._light[3].shadow.mapSize.height = 1024;
 
-    this._light[3].shadow.camera.near = 0.1;
-    this._light[3].shadow.camera.far = 100;
-    this._light[3].shadow.bias = bias;
+    // this._light[3].shadow.camera.near = 0.1;
+    // this._light[3].shadow.camera.far = 100;
+    // this._light[3].shadow.bias = bias;
 
-    Scene._scene.add( this._light[3] );
+    // Scene._scene.add( this._light[3] );
 };
 
 // Materials
@@ -104,6 +104,11 @@ Scene.addObject = function ( object ) {
 Scene.removeObject = function ( object ) {
     Scene._scene.remove( object );
 };
+
+Scene.removeEntity = function ( objectname) {
+    var selectedObject = Scene._scene.getObjectByName(objectname);
+    Scene._scene.remove( selectedObject );
+}
 
 Scene.removeObjects = function ( object ) {
     for ( var i = 0 ; i < Scene._objects.length ; ++i ) {

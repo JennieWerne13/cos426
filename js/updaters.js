@@ -440,8 +440,14 @@ TargetUpdater0.prototype.updatePositions = function ( particleAttributes, alive,
         var v = getElement( i, velocities );
         p.add( v.clone().multiplyScalar( delta_t ) );
         setElement( i, positions, p );
-
+             
         Goal.updatePosition(p.x,p.y,p.z);
+
+
+        // alert(1);
+        // Scene.removeEntity('yoshi.obj');  
+        // SystemSettings.addObjectFromFile( 'yoshi.png', 'yoshi.obj', p.x, p.y, p.z, 0.25, 0, 3 );
+
     }
 };
 

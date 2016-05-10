@@ -36,6 +36,8 @@ TargetInitializer0.prototype.initializePositions = function ( positions, toSpawn
         setElement( idx, positions, pos );
         Goal.updatePosition(pos.x,pos.y,pos.z);
 
+        
+        SystemSettings.addObjectFromFile( 'yoshi.png', 'yoshi.obj', pos.x, pos.y, pos.z, 0.25, 0, 3 );
     }
     positions.needUpdate = true;
 }

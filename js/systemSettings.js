@@ -110,6 +110,7 @@ SystemSettings.addObjectFromFile = function( fileTexture, fileObj, xPos, yPos, z
                     child.material = material;
                 }
             });
+            obj.name = fileObj;
             Scene.addObject(obj);
         });
 }
@@ -123,7 +124,7 @@ SystemSettings.addMTLObjectFromFile = function( fileTexture, fileObj, xPos, yPos
         materials.preload();
 
         var objLoader = new THREE.OBJLoader();
-        // objLoader.setMaterials( materials );
+        objLoader.setMaterials( materials );
         objLoader.setPath( 'animated_models/' );
         objLoader.load( fileObj, function ( object ) {
 
@@ -131,11 +132,6 @@ SystemSettings.addMTLObjectFromFile = function( fileTexture, fileObj, xPos, yPos
             object.scale.multiplyScalar(scale);
             object.rotation.x = rotateX * Math.PI / 2;
             object.rotation.y = rotateY * Math.PI / 2;
-            object.traverse(function (child) {
-                if (child instanceof THREE.Mesh) {
-                    child.material = materials;
-                }
-            });
             Scene.addObject( object );
 
         });
@@ -157,7 +153,7 @@ SystemSettings.level0 = {
     // Initialization
     initializerFunction : TargetInitializer0,
     initializerSettings : {
-        sphere:   new THREE.Vector4 ( -220.0, 5.0, -70.0, 1.0 ),
+        sphere:   new THREE.Vector4 ( 220.0, 10.0, -70.0, 1.0 ),
         color:    new THREE.Vector4 ( 0.0, 0.0, 1.0, 1.0 ),
         velocity: new THREE.Vector3 ( 0.0, 30.0, 0.0),
         lifetime: 5,
@@ -236,19 +232,67 @@ SystemSettings.level0 = {
         SystemSettings.addObjectFromFile( 'diablo.jpg', 'diablo.obj', 50, 10, -50, 45, 0, 3);
 
         // batman
-        SystemSettings.addObjectFromFile( 'batman_body.png', 'batman.obj', 35, 0.5, -50, 0.1, 1, 0 );
+        SystemSettings.addObjectFromFile( 'batman_body.png', 'batman.obj', 35, 0.7, -50, 0.1, 1, 0 );
 
         // bus
         SystemSettings.addObjectFromFile( 'bus.png', 'bus.obj', -85, 0, 0, 45, 0, 0 );
 
         // bear
-        SystemSettings.addMTLObjectFromFile( 'bear.mtl', 'bear.obj', 280, 0, 110, 1, 0, 2 );
+        SystemSettings.addObjectFromFile( 'bear.jpg', 'bear-obj.obj', 290, 0, 90, 1.5, 0, 2.3 );
 
-        SystemSettings.addMTLObjectFromFile( 'lego_people_obj.mtl', 'lego_people_obj.obj', 0, 0, 0, 1, 0, 0 );
+        // dummy
+        SystemSettings.addObjectFromFile( 'dummy.jpg', 'dummy.obj', -65, 0, 125, 0.18, 0, 3 );
 
+        // BB8
+        SystemSettings.addObjectFromFile( 'bb8.jpg', 'bb8.obj', 100, 0, 120, 0.25, 0, 3 );
 
-        // SystemSettings.addMTLObjectFromFile( 'smallprinter.obj.mtl', 'smallprinter.obj', 20, 0, 20, 1, 0 );        
+        // Iron Man
+        // SystemSettings.addObjectFromFile( 'iron_man.png', 'iron_man.obj', 220,0,-70, 17, 0, 3 );
 
+        // Deadpool
+        // SystemSettings.addObjectFromFile( 'deadpool.png', 'deadpool.obj', 0, 0, 0, 0.30, 0, 0 );
+
+        // Flash
+        // SystemSettings.addObjectFromFile( 'flash.png', 'flash.obj', 0, 0, 0, 3, 0, 3 );
+
+        // mario
+        // SystemSettings.addObjectFromFile( 'mario.jpg', 'mario.obj', 0, 0, 0, 0.18, 0, 0 );
+
+        // luigi
+        // SystemSettings.addObjectFromFile( 'luigi.jpg', 'luigi.obj', 0, 0, 0, 0.18, 0, 0 );
+
+        // shockwave
+        // SystemSettings.addObjectFromFile( 'shockwave.bmp', 'shockwave.obj', 0, 0, 0, 17, 0, 0 );
+
+        // spiderman
+        // SystemSettings.addObjectFromFile( 'spiderman.jpg', 'spiderman.obj', 0, 0, 0, 7, 0, 0 );        
+
+        // chair
+        // SystemSettings.addObjectFromFile( 'chair.jpg', 'chair.obj', 0, 7.5, 0, 0.75, 0, 0 ); 
+
+        // spongebob
+        // SystemSettings.addObjectFromFile( 'spongebob.jpg', 'spongebob.obj', 0, 0, 0, 17, 0, 0 );         
+
+        // mr. krabs
+        // SystemSettings.addObjectFromFile( 'mr_krabs.png', 'mr_krabs.obj', 0, 0, 0, 13, 0, 0 ); 
+
+        // patrick
+        // SystemSettings.addObjectFromFile( 'patrick.jpg', 'patrick.obj', 0, 0, 0, 13, 0, 0 );
+
+        // pizza
+        // SystemSettings.addObjectFromFile( 'pizza.png', 'pizza.obj', 0, 0, 0, 20, 0, 0 );
+
+        // desk
+        // SystemSettings.addObjectFromFile( 'desk.jpg', 'desk.obj', 0, 0, 30, 0.1, 0, 0 ); 
+
+        // printer: +3, +8.5, +5, 0.13, 0, 0 (relative to desk)
+        // SystemSettings.addObjectFromFile( 'printer.jpg', 'printer.obj', 3, 8.5, 35, 0.13, 0, 0 );
+
+        // computer: -3, +6.8, +2, 0.7, 0, 0 (relative to desk)
+        // SystemSettings.addObjectFromFile( 'computer.jpg', 'computer.obj', -3, 6.8, 32, 0.7, 0, 0 );
+
+        // Professor
+        // SystemSettings.addObjectFromFile( 'professor.png', 'professor.obj', 0, 0, 0, 1, 0, 3 );
 
         // creating a maze
         this.walls[0] = SystemSettings.createWall(60, 10, 0, 155);
