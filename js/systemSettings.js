@@ -357,6 +357,157 @@ SystemSettings.level0 = {
 
         this.walls[33] = SystemSettings.createWall( 10, 70, 25, 115);
         Scene.addObject( this.walls[33] );
+
+
+        var loader = new THREE.FontLoader();
+        loader.load( 'js/helvetiker_regular.typeface.js', function ( font ) {
+
+            var textGeo = new THREE.TextGeometry( "HELP ! !", {
+
+            bevelThickness: 0.5,
+            bevelSize: 0.25,
+            bevelSegments: 2,
+            bevelEnabled: true,
+                font: font,
+
+                size: 10,
+                height: 5,
+                curveSegments: 12,
+
+            });
+
+            textGeo.computeBoundingBox();
+            var centerOffset = -0.5 * ( textGeo.boundingBox.max.x - textGeo.boundingBox.min.x );
+
+            var textMaterial = new THREE.MeshPhongMaterial( { color: 0x1111ff, specular: 0x00ffff } );
+
+            var mesh = new THREE.Mesh( textGeo, textMaterial );
+            mesh.position.x = -20;
+            mesh.position.y = 30;
+            mesh.position.z = 50;
+            mesh.rotation.y = 0;
+            mesh.rotation.z = 0.2;
+            mesh.rotation.x = 0.1;
+            
+
+            mesh.castShadow = true;
+            mesh.receiveShadow = true;
+            Scene.addObject( mesh );
+
+        } );
+
+// -83.01874854819191, 10, 44.760892769978454
+        var loader = new THREE.FontLoader();
+        loader.load( 'js/helvetiker_regular.typeface.js', function ( font ) {
+
+            var textGeo = new THREE.TextGeometry( "WHERE", {
+
+            bevelThickness: 0.5,
+            bevelSize: 0.25,
+            bevelSegments: 2,
+            bevelEnabled: true,
+                font: font,
+
+                size: 5,
+                height: 2.5,
+                curveSegments: 12,
+
+            });
+
+            textGeo.computeBoundingBox();
+            var centerOffset = -0.5 * ( textGeo.boundingBox.max.x - textGeo.boundingBox.min.x );
+
+            var textMaterial = new THREE.MeshPhongMaterial( { color: 0x1111ff, specular: 0x00ffff } );
+
+            var mesh = new THREE.Mesh( textGeo, textMaterial );
+            mesh.position.x = -80;
+            mesh.position.y = 40;
+            mesh.position.z = 70;
+            mesh.rotation.y = Math.PI/2.0;
+            mesh.rotation.z = -0.2;
+            mesh.rotation.x = -0.1;
+            
+
+            mesh.castShadow = true;
+            mesh.receiveShadow = true;
+            Scene.addObject( mesh );
+
+        } );
+
+        var loader = new THREE.FontLoader();
+        loader.load( 'js/helvetiker_regular.typeface.js', function ( font ) {
+
+            var textGeo = new THREE.TextGeometry( "ARE YOU ?", {
+
+            bevelThickness: 0.5,
+            bevelSize: 0.25,
+            bevelSegments: 2,
+            bevelEnabled: true,
+                font: font,
+
+                size: 5,
+                height: 2.5,
+                curveSegments: 12,
+
+            });
+
+            textGeo.computeBoundingBox();
+            var centerOffset = -0.5 * ( textGeo.boundingBox.max.x - textGeo.boundingBox.min.x );
+
+            var textMaterial = new THREE.MeshPhongMaterial( { color: 0x1111ff, specular: 0x00ffff } );
+
+            var mesh = new THREE.Mesh( textGeo, textMaterial );
+            mesh.position.x = -80;
+            mesh.position.y = 30;
+            mesh.position.z = 70;
+            mesh.rotation.y = Math.PI/2.0;
+            mesh.rotation.z = -0.2;
+            mesh.rotation.x = -0.1;
+            
+
+            mesh.castShadow = true;
+            mesh.receiveShadow = true;
+            Scene.addObject( mesh );
+
+        } );
+
+
+
+        var loader = new THREE.FontLoader();
+        loader.load( 'js/helvetiker_regular.typeface.js', function ( font ) {
+
+            var textGeo = new THREE.TextGeometry( "FIND ME!", {
+
+            bevelThickness: 0.5,
+            bevelSize: 0.25,
+            bevelSegments: 2,
+            bevelEnabled: true,
+                font: font,
+
+                size: 7,
+                height: 2.5,
+                curveSegments: 12,
+
+            });
+
+            textGeo.computeBoundingBox();
+            var centerOffset = -0.5 * ( textGeo.boundingBox.max.x - textGeo.boundingBox.min.x );
+
+            var textMaterial = new THREE.MeshPhongMaterial( { color: 0x1111ff, specular: 0x00ffff } );
+
+            var mesh = new THREE.Mesh( textGeo, textMaterial );
+            mesh.position.x = 200;
+            mesh.position.y = 40;
+            mesh.position.z = 27;
+            mesh.rotation.y = -Math.PI/2.0;
+
+            mesh.castShadow = true;
+            mesh.receiveShadow = true;
+            Scene.addObject( mesh );
+
+        } );
+
+
     },
 };
 
@@ -500,6 +651,77 @@ SystemSettings.level1 = {
 
         this.walls[11] = SystemSettings.createWall(50, 10, -25, -35);
         Scene.addObject( this.walls[11] );
+
+
+        var loader = new THREE.FontLoader();
+        loader.load( 'js/helvetiker_regular.typeface.js', function ( font ) {
+
+            var textGeo = new THREE.TextGeometry( "PIZZA", {
+
+            bevelThickness: 1,
+            bevelSize: 0.5,
+            bevelSegments: 2,
+            bevelEnabled: true,
+                font: font,
+
+                size: 15,
+                height: 5,
+                curveSegments: 12,
+
+            });
+
+            textGeo.computeBoundingBox();
+            var centerOffset = -0.5 * ( textGeo.boundingBox.max.x - textGeo.boundingBox.min.x );
+
+            var textMaterial = new THREE.MeshPhongMaterial( { color: 0xff0011, specular: 0x00ffff } );
+
+            var mesh = new THREE.Mesh( textGeo, textMaterial );
+            mesh.position.x = -40;
+            mesh.position.y = 30;
+            mesh.position.z = 15;
+            mesh.rotation.y = 0;
+
+            mesh.castShadow = true;
+            mesh.receiveShadow = true;
+            Scene.addObject( mesh );
+
+        } );
+
+        var loader = new THREE.FontLoader();
+        loader.load( 'js/helvetiker_regular.typeface.js', function ( font ) {
+
+            var textGeo = new THREE.TextGeometry( "WE WANT", {
+
+            bevelThickness: 1,
+            bevelSize: 0.5,
+            bevelSegments: 2,
+            bevelEnabled: true,
+                font: font,
+
+                size: 10,
+                height: 5,
+                curveSegments: 12,
+
+            });
+
+            textGeo.computeBoundingBox();
+            var centerOffset = -0.5 * ( textGeo.boundingBox.max.x - textGeo.boundingBox.min.x );
+
+            var textMaterial = new THREE.MeshPhongMaterial( { color: 0xff0011, specular: 0x00ffff } );
+
+            var mesh = new THREE.Mesh( textGeo, textMaterial );
+            mesh.position.x = -45;
+            mesh.position.y = 50;
+            mesh.position.z = 15;
+            mesh.rotation.y = 0;
+
+            mesh.castShadow = true;
+            mesh.receiveShadow = true;
+            Scene.addObject( mesh );
+
+        } );
+
+
     },
 };
 
