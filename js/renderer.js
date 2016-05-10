@@ -104,7 +104,7 @@ Renderer.update = function () {
     else if (Game.timesUp()) {
         Game.lostGame();
     }
-    else if (Game.bumpedIntoAdvisor()) {
+    else if (Game.level == 3 && Game.bumpedIntoAdvisor()) {
         Game.restartLevel();
     }
     else {
