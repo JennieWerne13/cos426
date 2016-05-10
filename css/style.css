@@ -248,33 +248,37 @@ button {
 
 #storyline2-0 {
     display: none;
-    /*height: 100vh;*/
+    height: 100%;
     text-align: center;
 }
 
 #storyline2-1 {
     display: none;
+    height: 100%;
     text-align: center;
 }
 
 #storyline2-2 {
     display: none;
+    height: 100%;
     text-align: center;
 }
 
 #storyline3-0 {
     display: none;
-    /*height: 100vh;*/
+    height: 100%;
     text-align: center;
 }
 
 #storyline3-1 {
     display: none;
+    height: 100%;
     text-align: center;
 }
 
 #storyline3-2 {
     display: none;
+    height: 100%;
     text-align: center;
 }
 
