@@ -115,7 +115,7 @@ Player.putDownItem = function() {
 	this.pressed = false;
 	if (Game.level == 1) {
 		this.pressed = true;
-		SystemSettings.addObjectFromFile( 'pizza.png', 'pizza.obj', this.pizzaLocation[0], 0, this.pizzaLocation[2], 23, 0, 2 );
+		SystemSettings.addObjectFromFile( 'pizza.png', 'pizza.obj', Player.pizzaLocation[0], 0, Player.pizzaLocation[2], 23,0, Renderer._camera.rotation._y + Math.PI);
 		for (var i = 0; i < Player.officersReached.length; i++) {
 			if (Player.officersReached[i] == 0 && Math.abs(this.pizzaLocation[0] - Goal.officers[i][0]) < 20 && Math.abs(this.pizzaLocation[2] - Goal.officers[i][2]) < 20) {
 				Player.officersReached[i] = 1;
