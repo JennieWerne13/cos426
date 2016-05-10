@@ -48,8 +48,10 @@ Renderer.create = function( scene, canvas ) {
 
     // Create camera and setup controls
     Renderer._camera   = new THREE.PerspectiveCamera ( 55, Renderer._aspect, 0.01, 5000 );
-    Renderer._controls = new THREE.TrackballControls ( Renderer._camera, Renderer._renderer.domElement );
-    Renderer._camera.position.set( 0, 0, 200 );
+    // Renderer._controls = new THREE.TrackballControls ( Renderer._camera, Renderer._renderer.domElement );
+    Renderer._camera.position.set( Player.position[0], Player.position[1], Player.position[2] ); // SARAH
+    Renderer._camera.rotation.set( Player.orientation[0], Player.orientation[1], Player.orientation[2]); // SARAH
+
 
 
     // Add rendering stats, so we know the performance
@@ -78,19 +80,34 @@ Renderer.onWindowResize = function () {
     document.getElementById("topdiv").style.height = window.innerHeight*0.225 + "px"; // SARAH
 };
 
-
+// THIS IS THE IMPORTANT FUNCTION
 Renderer.update = function () {
 
-    ParticleEngine.step();
+    GameEngine.step();
 
-    Renderer._controls.update();
-    // Renderer._stats.update();
+    // Renderer._controls.update(); // BRING BACK LATER
+
+
+    // Renderer._stats.update(); // SARAH
+
+    // SARAH: ADD UPDATE FOR POSITION 
+    Player.updatePosition();
+
 
     Renderer._renderer.render( Renderer._scene, Renderer._camera );
 
+    // SARAH
+    if (Game.levelCompleted()) {
+        Game.progressToNextLevel();
+    }
+    else if (Game.timesUp()) {
+        Game.lostGame();
+    }
+    else {
+        requestAnimationFrame( Renderer.update );    
+    }
 
-    requestAnimationFrame( Renderer.update );
-
+    // requestAnimationFrame( Renderer.update );    
 }
 
 Renderer.snapShot = function () {
@@ -108,17 +125,17 @@ Renderer.snapShot = function () {
     window.open( url );
 }
 
-// add event listener that will cause 'I' key to download image
-window.addEventListener( 'keyup', function( event ) {
-    // only respond to 'I' key
-    if ( event.which == 73 ) {
-        Renderer.snapShot();
-    }
-});
+// // add event listener that will cause 'I' key to download image
+// window.addEventListener( 'keyup', function( event ) {
+//     // only respond to 'I' key
+//     if ( event.which == 73 ) {
+//         Renderer.snapShot();
+//     }
+// });
 
-window.addEventListener( 'keyup', function( event ) {
-    // only respond to 'Spacebar' key
-    if ( event.which == 32 ) {
-        ParticleEngine.pause();
-    }
-});
+// window.addEventListener( 'keyup', function( event ) {
+//     // only respond to 'Spacebar' key
+//     if ( event.which == 32 ) {
+//         ParticleEngine.pause();
+//     }
+// });
