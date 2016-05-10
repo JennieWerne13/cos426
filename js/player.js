@@ -21,7 +21,7 @@ Player.updatePosition = function() {
 
 Player.getInspirString = function(i) {
 	if (i == 0) {
-		return "Arrogance never hurts!";
+		return "Lying is okay.";
 	}
 	else if (i == 1) {
 		return "Don't experiment.";
@@ -33,10 +33,10 @@ Player.getInspirString = function(i) {
 		return "Tap into your animal instinct!";
 	}
 	else if (i == 4) {
-		return "Do what's right.";
+		return "Follow your heart.";
 	}
 	else if (i == 5) {
-		return "You can do it!";
+		return "Capture their attention!";
 	}
 }
 
