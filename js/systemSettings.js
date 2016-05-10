@@ -231,7 +231,7 @@ SystemSettings.level0 = {
         SystemSettings.addObjectFromFile( 'diablo.jpg', 'diablo.obj', 50, 10, -50, 45, 0, 3);
 
         // batman
-        SystemSettings.addObjectFromFile( 'batman_body.png', 'batman.obj', 35, 0.5, -50, 0.1, 1, 0 );
+        SystemSettings.addObjectFromFile( 'batman_body.png', 'batman.obj', 35, 0.7, -50, 0.1, 1, 0 );
 
         // bus
         SystemSettings.addObjectFromFile( 'bus.png', 'bus.obj', -85, 0, 0, 45, 0, 0 );
@@ -245,17 +245,14 @@ SystemSettings.level0 = {
         // BB8
         SystemSettings.addObjectFromFile( 'bb8.jpg', 'bb8.obj', 100, 0, 120, 0.25, 0, 3 );
 
-        // Iron Man -- GOAL
-        SystemSettings.addObjectFromFile( 'iron_man.png', 'iron_man.obj', 220,0,-70, 17, 0, 3 );
+        // Iron Man
+        // SystemSettings.addObjectFromFile( 'iron_man.png', 'iron_man.obj', 220,0,-70, 17, 0, 3 );
 
         // Deadpool
         // SystemSettings.addObjectFromFile( 'deadpool.png', 'deadpool.obj', 0, 0, 0, 0.30, 0, 0 );
 
         // Flash
         // SystemSettings.addObjectFromFile( 'flash.png', 'flash.obj', 0, 0, 0, 3, 0, 3 );
-
-        // computer
-        // SystemSettings.addObjectFromFile( 'computer.jpg', 'computer.obj', 0, 0, 0, 1, 0, 0 );
 
         // mario
         // SystemSettings.addObjectFromFile( 'mario.jpg', 'mario.obj', 0, 0, 0, 0.18, 0, 0 );
@@ -285,13 +282,19 @@ SystemSettings.level0 = {
         // SystemSettings.addObjectFromFile( 'pizza.png', 'pizza.obj', 0, 0, 0, 20, 0, 0 );
 
         // desk
-        SystemSettings.addObjectFromFile( 'desk.jpg', 'desk.obj', 0, 0, 30, 0.1, 0, 0 ); 
+        // SystemSettings.addObjectFromFile( 'desk.jpg', 'desk.obj', 0, 0, 30, 0.1, 0, 0 ); 
 
         // printer: +3, +8.5, +5, 0.13, 0, 0 (relative to desk)
-        SystemSettings.addObjectFromFile( 'printer.jpg', 'printer.obj', 3, 8.5, 35, 0.13, 0, 0 );
+        // SystemSettings.addObjectFromFile( 'printer.jpg', 'printer.obj', 3, 8.5, 35, 0.13, 0, 0 );
 
         // computer: -3, +6.8, +2, 0.7, 0, 0 (relative to desk)
-        SystemSettings.addObjectFromFile( 'computer.jpg', 'computer.obj', -3, 6.8, 32, 0.7, 0, 0 );
+        // SystemSettings.addObjectFromFile( 'computer.jpg', 'computer.obj', -3, 6.8, 32, 0.7, 0, 0 );
+
+        // Yoshi: GOAL FRIEND
+        SystemSettings.addObjectFromFile( 'yoshi.png', 'yoshi.obj', 220,0,-70, 0.25, 0, 3 );
+
+        // Professor
+        // SystemSettings.addObjectFromFile( 'professor.png', 'professor.obj', 0, 0, 0, 1, 0, 3 );
 
         // creating a maze
         this.walls[0] = SystemSettings.createWall(60, 10, 0, 155);
