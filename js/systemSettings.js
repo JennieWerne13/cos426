@@ -292,7 +292,7 @@ SystemSettings.level0 = {
         // SystemSettings.addObjectFromFile( 'computer.jpg', 'computer.obj', -3, 6.8, 32, 0.7, 0, 0 );
 
         // Professor
-        // SystemSettings.addObjectFromFile( 'professor.png', 'professor.obj', 0, 0, 0, 1, 0, 3 );
+        SystemSettings.addObjectFromFile( 'professor.png', 'professor.obj', 0, 0, 0, 7, 0, 0 );
 
         // creating a maze
         this.walls[0] = SystemSettings.createWall(60, 10, 0, 155);
