@@ -4,6 +4,9 @@
 <head>
     <title>COS426: FINAL PROJECT</title>
     <link href="css/style.css" type="text/css" rel="stylesheet"/>
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Finger+Paint' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,300italic,300,100italic,100,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -72,36 +75,116 @@
 
     <!-- These are the story pages -->
     <!-- Every time a story page is added, make sure to modify its css in style.css (initially set display to none) -->
+    <!-- ############################################################################################################### -->
+    <!-- Sarah's dummy pages (see the web page to understand its very basic functions) -->
+    <!-- Most of these pages aren't visible. They appear one at a time depending on the current level.  -->
+
+    <!-- These are the story pages -->
+    <!-- Every time a story page is added, make sure to modify its css in style.css (initially set display to none) -->
     <div id="storypage">
-        <div id="storyline0-0">STORYLINE 0, PAGE 0 GOES HERE <button onclick="Game.nextPage()">Next Page</button></div>
-        <div id="storyline0-1">STORYLINE 0, PAGE 1 GOES HERE <button onclick="Game.nextPage()">Next Page</button></div>
-        <div id="storyline0-2">STORYLINE 0, PAGE 2 GOES HERE <button onclick="Game.playGame()">Play Game</button></div>
+        <div id="storyline0-0">
+            <h1 class = "title">Dreamescapes</h1>
+            <br><br><br><br><br><br><br><br><br><br>
+            <button onclick="Game.nextPage()">NEXT</button>
+            <br><br><br><br><br>
+            <h2 class="subtitle">Sarah Cen, Pallavi Koppol, Neeta Patel, Jennie Werner</h2>
+            <h2 class="subtitle">COS 426: Computer Graphics, Spring 2016</h2>
+        </div>
+        <div id="storyline0-1">
+            <img src="images/nap-time-edited.jpg" alt="girl takes a nap" class="illustration-1">
+            <p class="subtitle text">Thank goodness class let out on time today! I barely slept last night. I stayed up until 5 a.m. working on a presentation for my seminar later today. I'm just gonna be a zombie presenter ... but if I can squeeze in a quick nap now ... that would be good ...</p>
+            <br><br><br><br>
+            <button onclick="Game.nextPage()">NEXT</button>
+        </div>
+        <div id="storyline0-2">
+            <div class="double-imgs-centered">
+                <img src="images/scary-campus-edited.jpg" alt="scary princeton campus">
+                <img src="images/unknown-caller-edited.jpg" alt="unknown caller">
+            </div>
+            <div class="left-col">
+                <p class="subtitle">OMG. Has campus always been so terrifying? I haven't felt this way since I was a freshman ...</p>
+            </div>
+            <div class="right-col">
+                <p class="subtitle">Oh, it's my friend ... no, wait, who is that? ... well, they're calling me. *picks up phone* "Hey, what's up? You're where? You need me? Umm, okay, I'll come find you. Don't wander too far ..."</p>
+            </div>
+            <br><br><br><br>
+            <button onclick="Game.playGame()" style="margin-top: 150px">PLAY GAME</button>
+        </div>
 
-        <div id="storyline1-0">STORYLINE 1, PAGE 0 GOES HERE <button onclick="Game.nextPage()">Next Page</button></div>
-        <div id="storyline1-1">STORYLINE 1, PAGE 1 GOES HERE <button onclick="Game.nextPage()">Next Page</button></div>
-        <div id="storyline1-2">STORYLINE 1, PAGE 2 GOES HERE <button onclick="Game.playGame()">Play Game</button></div>
+        <div id="storyline1-0">
+            <img src="images/holding-hands-edited.jpg" alt="friends holding hands" class="illustration-1">
+            <p class="subtitle text">Are we really ... best friends? I feel like I don't know you ... well. Hey, wait, hold on -- </p>
+            <br><br><br><br>
+            <button onclick="Game.nextPage()">NEXT</button>
+        </div>
+        <div id="storyline1-1">
+            <img src="images/eating-club-edited.jpg" alt="eating club" class="illustration-1">
+            <p class="subtitle text">What? Wait. How did I get here??</p>
+            <br><br><br><br>
+            <button onclick="Game.nextPage()">NEXT</button>
+        </div>
+        <div id="storyline1-2">
+            <img src="images/bicker-convo-edited.jpg" alt="talking outside club" class="illustration-1">
+            <p class="subtitle text">"I heard that you don't even have a chance at this eating club unless you personally bring pizza to every single officer." Well, conveniently, I seem to have brought myself two pies of pizza for no reason. So ...</p>
+            <br><br><br><br>
+            <button onclick="Game.playGame()">PLAY GAME</button>
+        </div>
 
-        <div id="storyline2-0">STORYLINE 2, PAGE 0 GOES HERE <button onclick="Game.nextPage()">Next Page</button></div>
-        <div id="storyline2-1">STORYLINE 2, PAGE 1 GOES HERE <button onclick="Game.nextPage()">Next Page</button></div>
-        <div id="storyline2-2">STORYLINE 2, PAGE 2 GOES HERE <button onclick="Game.playGame()">Play Game</button></div>
+        <div id="storyline2-0">
+            <img src="images/officers-pizza-edited.jpg" alt="officers eating pizza" class="illustration-1">
+            <p class="subtitle text">Well, now I'm guaranteed a spot in the coolest eating club on campus. Hm. I don't know why, but suddenly I'm feeling kind of anxious ... social pressure?</p>
+            <br><br><br><br>
+            <button onclick="Game.nextPage()">NEXT</button>
+        </div>
+        <div id="storyline2-1">
+            <img src="images/happy-resume-edited.jpg" alt="resume" class="illustration-1">
+            <p class="subtitle text">Oh no, I just remembered that I don't have anything to do this summer!! I'm just ... I'm just gonna disappear into irrelevance. I have to do something about this! Good thing I have all those connections from my new eating club affiliation ...</p>
+            <br><br><br><br>
+            <button onclick="Game.nextPage()">NEXT</button>
+        </div>
+        <div id="storyline2-2">
+            <img src="images/sad-resume-edited.jpg" alt="a very bare resume" class="illustration-1">
+            <p class="subtitle text">Time to pad my resume! I'm sure that if I talk to enough people in my club, they'll give me some great advice and help me stand out.</p>
+            <br><br><br><br>
+            <button onclick="Game.playGame()">PLAY GAME</button>
+        </div>
 
-        <div id="storyline3-0">STORYLINE 3, PAGE 0 GOES HERE <button onclick="Game.nextPage()">Next Page</button></div>
-        <div id="storyline3-1">STORYLINE 3, PAGE 1 GOES HERE <button onclick="Game.nextPage()">Next Page</button></div>
-        <div id="storyline3-2">STORYLINE 3, PAGE 2 GOES HERE <button onclick="Game.playGame()">Play Game</button></div>
+        <div id="storyline3-0">
+            <img src="images/intern-win-edited.jpg" alt="happy resume winning an internship" class="illustration-1">
+            <p class="subtitle text">Nailed it! Silver bags, here I come! If I do well this summer, I've basically got a job lined up.</p>
+            <br><br><br><br>
+            <button onclick="Game.nextPage()">NEXT</button>
+        </div>
+        <div id="storyline3-1">
+            <img src="images/grad-money-edited.jpg" alt="cap and gown" class="illustration-1">
+            <p class="subtitle text"> Graduation! $$$! Here I come!</p>
+            <br><br><br><br>
+            <button onclick="Game.nextPage()">NEXT</button>
+        </div>
+        <div id="storyline3-2">
+            <img src="images/thesis-crisis-edited.jpg" alt="thesis crisis" class="illustration-1">
+            <p class="subtitle text">... BUT FIRST, I must turn in this thesis. It's on 'Automatic Seg Fault Generation in an OpenGL Environment,' and it's due in an hour and there are no working printers! ARGH!! I heard there's one that works in Sceond Campus Center ... gotta run there, print it out, and then find my thesis advisor! Can't let him find me before then, though ...</p>
+            <br><br><br>
+            <button onclick="Game.playGame()">PLAY GAME</button>
+        </div>
 
-        <div id="youwon">CONGRATS YOU WON!</div>
+        <div id="youwon">
+            <h1 class = "title">CONGRATS, YOU WON!</h1>
+        </div>
         <div id="youlost">Sorry, you lost. Try again!</div>
     </div>
 
     <!-- This is the game/interactive space -->
-    <div id="gamediv">
+    <div id="gamediv"> <!-- NEETA -->
 
         <!-- Top bar contains instructions and birds eye view -->
-        <div id="topbar">This div is where random text goes and birds eye view can be in top right. Since we don't actually have a game yet, there's just a random 1% chance that you'll lose every time step. But otherwise, you win! For now, wait for a few seconds, then we'll have reached the goal and we are brought to the next level.</div>
+        <div id="topbar0">MISSION: FIND AND RESCUE YOUR LOST FRESHMAN-YEAR FRIEND. USE THE ARROW KEYS ON YOUR KEYBOARD TO NAVIGATE THROUGH CAMPUS.</div>
+        <div id="topbar1">MISSION: DELIVER PIZZA TO THE OFFICERS OF THIS EATING CLUB. USE THE ARROW KEYS ON YOUR KEYBOARD TO NAVIGATE THROUGH THE BUILDING.</div>
+        <div id="topbar2">MISSION: YOUR RESUME NEEDS MORE IN ORDER TO SNAG THAT DREAM INTERNSHIP. WANDER THE BUILDING TO MEET PEOPLE WHO WILL GIVE YOUR RESUME STREET CRED.</div>
+        <div id="topbar3">MISSION: FIND YOUR WAY TO THE PRINTER IN ORDER TO PRINT YOUR THESIS ON TIME!</div>
 
         <!-- Canvas contains the actual game -->
         <canvas id="canvas" width="540" height="380"></canvas>
-
     </div>
 
 </body>

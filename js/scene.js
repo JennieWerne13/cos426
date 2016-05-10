@@ -28,10 +28,10 @@ Scene.setupLighting = function() {
     this._light[0] = new THREE.AmbientLight( 0x303030, 2.0 ); // soft white light
     Scene._scene.add(this._light[0]);
 
-    this._light[1]    = new THREE.PointLight( 0xffffff, 7.0, 100.0 );
-    this._light[1].position.set( 110, 350, 50 );
-    this._light[1].decay = 2;
-    Scene._scene.add( this._light[1]  );
+    // this._light[1]    = new THREE.PointLight( 0xffffff, 7.0, 100.0 );
+    // this._light[1].position.set( 110, 350, 50 );
+    // this._light[1].decay = 2;
+    // Scene._scene.add( this._light[1]  );
 
     // var bias;
     // // to fix aliasing in shadows
