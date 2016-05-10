@@ -210,6 +210,16 @@ SystemSettings.level0 = {
     particlesFreq : 500,
     walls         : [],
     createScene : function () {
+        // setting up sky
+        var skyGeo = new THREE.PlaneBufferGeometry(1000, 1000, 1, 1);
+        var skyTexture = new THREE.TextureLoader().load( "textures/space.jpg" );
+        var skyMaterial = new THREE.MeshPhongMaterial({ map: skyTexture, side: THREE.DoubleSide });
+        var sky = new THREE.Mesh(skyGeo, skyMaterial);
+        sky.rotation.x = -1.57;
+        sky.position.y = 60;
+        Scene.addObject(sky);
+
+
         // grass texture of plane
         var texture = new THREE.TextureLoader().load( "textures/grasslight-big.jpg" );
         texture.wrapS = THREE.RepeatWrapping;
@@ -428,6 +438,15 @@ SystemSettings.level1 = {
     walls: [],
 
     createScene : function () {
+        // setting up sky
+        var skyGeo = new THREE.PlaneBufferGeometry(1000, 1000, 1, 1);
+        var skyTexture = new THREE.TextureLoader().load( "textures/sky.jpg" );
+        var skyMaterial = new THREE.MeshPhongMaterial({ map: skyTexture, side: THREE.DoubleSide });
+        var sky = new THREE.Mesh(skyGeo, skyMaterial);
+        sky.rotation.x = -1.57;
+        sky.position.y = 60;
+        Scene.addObject(sky);
+
         // wood texture of plane
         var texture = new THREE.TextureLoader().load( "textures/wood_floor.jpg" );
         texture.wrapS = THREE.RepeatWrapping;
@@ -566,6 +585,15 @@ SystemSettings.level2 = {
     particlesFreq : 500,
     walls: [],
     createScene : function () {
+        // setting up sky
+        var skyGeo = new THREE.PlaneBufferGeometry(1000, 1000, 1, 1);
+        var skyTexture = new THREE.TextureLoader().load( "textures/sky.jpg" );
+        var skyMaterial = new THREE.MeshPhongMaterial({ map: skyTexture, side: THREE.DoubleSide });
+        var sky = new THREE.Mesh(skyGeo, skyMaterial);
+        sky.rotation.x = -1.57;
+        sky.position.y = 60;
+        Scene.addObject(sky);
+
         // wood texture of plane
         var texture = new THREE.TextureLoader().load( "textures/wood_floor.jpg" );
         texture.wrapS = THREE.RepeatWrapping;
@@ -712,6 +740,15 @@ SystemSettings.level3 = {
     particlesFreq : 500,
     walls : [],
     createScene : function () {
+        // setting up sky
+        var skyGeo = new THREE.PlaneBufferGeometry(1000, 1000, 1, 1);
+        var skyTexture = new THREE.TextureLoader().load( "textures/sky.jpg" );
+        var skyMaterial = new THREE.MeshPhongMaterial({ map: skyTexture, side: THREE.DoubleSide });
+        var sky = new THREE.Mesh(skyGeo, skyMaterial);
+        sky.rotation.x = -1.57;
+        sky.position.y = 60;
+        Scene.addObject(sky);
+        
         // wood texture of plane
         var texture = new THREE.TextureLoader().load( "textures/campus_floor.jpg" );
         texture.wrapS = THREE.RepeatWrapping;
