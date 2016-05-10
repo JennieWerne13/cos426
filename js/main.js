@@ -17,7 +17,7 @@ window.onload = function() {
     // add event listener that will cause 'I' key to download image
     window.addEventListener( 'keydown', function( event ) {
         var moveInc = 10;
-        var turnInc = 0.05;
+        var turnInc = 0.1;
 
         if (event.which == 38) { // move forward
             Player.moveForward(moveInc);  
@@ -27,6 +27,10 @@ window.onload = function() {
             Player.turnLeft(turnInc);
         }else if (event.which == 39) { // right turn
             Player.turnRight(turnInc);
+        }
+        else if (event.which == 32) {
+            Player.pickUpItem();
+            setTimeout(function() {Player.putDownItem();}, 1000);
         }
     });
 

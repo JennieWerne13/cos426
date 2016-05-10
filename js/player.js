@@ -4,7 +4,7 @@ Player.init = function() {
 	var rand = Math.random() * 0.1 - 0.05;
 	Player.position = [0,10,149]; // JENNIE: being higher up wastes less space on bottom
 	Player.orientation = [0,rand,0];
-	Player.holdingItem = false;
+	Player.pressed = false;
 }
 
 // Update the player's position
@@ -21,13 +21,13 @@ Player.pickUpItem = function() {
 
 	// Pick up item (this part might not belong in this class, but just generally in the rendering class)
 
-	this.holdingItem = true;
+	this.pressed = true;
 }
 
 Player.putDownItem = function() {
 	// THIS ALSO NEEDS TO BE FILLED IN (MAYBE)
 
-	this.holdingItem = false;
+	this.pressed = false;
 }
 
 Player.moveForward = function(amount) {

@@ -35,9 +35,13 @@ TargetInitializer0.prototype.initializePositions = function ( positions, toSpawn
 
         setElement( idx, positions, pos );
         Goal.updatePosition(pos.x,pos.y,pos.z);
+        
+
+        SystemSettings.addObjectFromFile( 'yoshi.png', 'yoshi.obj', 220, 10, -70, 0.25, 0, 3 );
+
+        // Scene.getObjectByName('yoshi.obj').position;
 
         
-        SystemSettings.addObjectFromFile( 'yoshi.png', 'yoshi.obj', pos.x, pos.y, pos.z, 0.25, 0, 3 );
     }
     positions.needUpdate = true;
 }
@@ -67,7 +71,7 @@ TargetInitializer0.prototype.initializeColors = function ( colors, toSpawn ) {
         var g = Math.min(Math.max(0.0,base_col.y + pixel_var*(Math.random()-0.5)),1.0);
         var b = Math.min(Math.max(0.0,base_col.z + pixel_var*(Math.random()-0.5)),1.0);
 
-        var new_col = new THREE.Vector4(r,g,b,1);
+        var new_col = new THREE.Vector4(r,g,b,0);
 
         // ----------- STUDENT CODE END ------------
 
@@ -168,7 +172,7 @@ TargetInitializer1.prototype.initializeColors = function ( colors, toSpawn ) {
         var g = Math.min(Math.max(0.0,base_col.y + pixel_var*(Math.random()-0.5)),1.0);
         var b = Math.min(Math.max(0.0,base_col.z + pixel_var*(Math.random()-0.5)),1.0);
 
-        var new_col = new THREE.Vector4(r,g,b,1);
+        var new_col = new THREE.Vector4(r,g,b,0);
 
         // ----------- STUDENT CODE END ------------
 

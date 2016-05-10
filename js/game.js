@@ -40,7 +40,9 @@ Game.levelCompleted = function() {
 	if (Player.position[0] <= Goal.position[0] + bounds && Player.position[0] >= Goal.position[0] - bounds) {
 		if (Player.position[1] <= Goal.position[1] + bounds && Player.position[1] >= Goal.position[1] - bounds) {
 			if (Player.position[2] <= Goal.position[2] + bounds && Player.position[2] >= Goal.position[2] - bounds) {
-				return true;
+				if (Player.pressed) {
+					return true;
+				}
 			}
 		}
 	}

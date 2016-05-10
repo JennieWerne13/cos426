@@ -306,18 +306,6 @@ EulerUpdater.prototype.updateColors = function ( particleAttributes, alive, delt
         // ----------- STUDENT CODE BEGIN ------------
         var c = getElement( i, colors );
 
-        var rgb_scal = 0.05;
-        if (Math.random() < 0.01) {
-            c.x = Math.round(Math.random());
-            c.y = Math.round(Math.random());
-        }
-        else {
-            c.x = Math.min(Math.max(0,c.x + rgb_scal*(Math.random() - 0.5)));
-            c.y = Math.min(Math.max(0,c.y + rgb_scal*(Math.random() - 0.5)));
-            c.z = Math.min(Math.max(0,c.z + rgb_scal*(Math.random() - 0.5)));
-            c.w = lifetimes[i]/maxlife;
-        }
-
         setElement( i, colors, c );
         // ----------- STUDENT CODE END ------------
     }
@@ -443,11 +431,16 @@ TargetUpdater0.prototype.updatePositions = function ( particleAttributes, alive,
              
         Goal.updatePosition(p.x,p.y,p.z);
 
-
-        // alert(1);
-        // Scene.removeEntity('yoshi.obj');  
-        // SystemSettings.addObjectFromFile( 'yoshi.png', 'yoshi.obj', p.x, p.y, p.z, 0.25, 0, 3 );
-
+        try {
+            Scene._scene.getObjectByName('yoshi.obj').position.set(p.x,p.y,p.z);
+            var tmp1 = Scene._scene.getObjectByName('yoshi.obj').rotation._x;
+            var tmp2 = Scene._scene.getObjectByName('yoshi.obj').rotation._y;
+            var tmp3 = Scene._scene.getObjectByName('yoshi.obj').rotation._z;
+            Scene._scene.getObjectByName('yoshi.obj').rotation.set(0, tmp2 + 0.1, 0);
+        }
+        catch(err) {
+            continue;
+        }
     }
 };
 
@@ -487,18 +480,6 @@ TargetUpdater0.prototype.updateColors = function ( particleAttributes, alive, de
         if ( !alive[i] ) continue;
         // ----------- STUDENT CODE BEGIN ------------
         var c = getElement( i, colors );
-
-        var rgb_scal = 0.05;
-        if (Math.random() < 0.01) {
-            c.x = Math.round(Math.random());
-            c.y = Math.round(Math.random());
-        }
-        else {
-            c.x = Math.min(Math.max(0,c.x + rgb_scal*(Math.random() - 0.5)));
-            c.y = Math.min(Math.max(0,c.y + rgb_scal*(Math.random() - 0.5)));
-            c.z = Math.min(Math.max(0,c.z + rgb_scal*(Math.random() - 0.5)));
-            c.w = lifetimes[i]/maxlife;
-        }
 
         setElement( i, colors, c );
         // ----------- STUDENT CODE END ------------
@@ -665,19 +646,6 @@ TargetUpdater1.prototype.updateColors = function ( particleAttributes, alive, de
         if ( !alive[i] ) continue;
         // ----------- STUDENT CODE BEGIN ------------
         var c = getElement( i, colors );
-
-        var rgb_scal = 0.05;
-        if (Math.random() < 0.01) {
-            c.x = Math.round(Math.random());
-            c.y = Math.round(Math.random());
-        }
-        else {
-            c.x = Math.min(Math.max(0,c.x + rgb_scal*(Math.random() - 0.5)));
-            c.y = Math.min(Math.max(0,c.y + rgb_scal*(Math.random() - 0.5)));
-            c.z = Math.min(Math.max(0,c.z + rgb_scal*(Math.random() - 0.5)));
-            c.w = lifetimes[i]/maxlife;
-        }
-
         setElement( i, colors, c );
         // ----------- STUDENT CODE END ------------
     }
@@ -844,18 +812,6 @@ TargetUpdater2.prototype.updateColors = function ( particleAttributes, alive, de
         // ----------- STUDENT CODE BEGIN ------------
         var c = getElement( i, colors );
 
-        var rgb_scal = 0.05;
-        if (Math.random() < 0.01) {
-            c.x = Math.round(Math.random());
-            c.y = Math.round(Math.random());
-        }
-        else {
-            c.x = Math.min(Math.max(0,c.x + rgb_scal*(Math.random() - 0.5)));
-            c.y = Math.min(Math.max(0,c.y + rgb_scal*(Math.random() - 0.5)));
-            c.z = Math.min(Math.max(0,c.z + rgb_scal*(Math.random() - 0.5)));
-            c.w = lifetimes[i]/maxlife;
-        }
-
         setElement( i, colors, c );
         // ----------- STUDENT CODE END ------------
     }
@@ -1021,18 +977,6 @@ TargetUpdater3.prototype.updateColors = function ( particleAttributes, alive, de
         if ( !alive[i] ) continue;
         // ----------- STUDENT CODE BEGIN ------------
         var c = getElement( i, colors );
-
-        var rgb_scal = 0.05;
-        if (Math.random() < 0.01) {
-            c.x = Math.round(Math.random());
-            c.y = Math.round(Math.random());
-        }
-        else {
-            c.x = Math.min(Math.max(0,c.x + rgb_scal*(Math.random() - 0.5)));
-            c.y = Math.min(Math.max(0,c.y + rgb_scal*(Math.random() - 0.5)));
-            c.z = Math.min(Math.max(0,c.z + rgb_scal*(Math.random() - 0.5)));
-            c.w = lifetimes[i]/maxlife;
-        }
 
         setElement( i, colors, c );
         // ----------- STUDENT CODE END ------------

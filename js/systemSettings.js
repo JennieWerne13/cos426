@@ -153,11 +153,11 @@ SystemSettings.level0 = {
     // Initialization
     initializerFunction : TargetInitializer0,
     initializerSettings : {
-        sphere:   new THREE.Vector4 ( 220.0, 10.0, -70.0, 1.0 ),
-        color:    new THREE.Vector4 ( 0.0, 0.0, 1.0, 1.0 ),
+        sphere:   new THREE.Vector4 ( 220.0, 0.0, -70.0, 1.0 ),
+        color:    new THREE.Vector4 ( 0.0, 0.0, 0.0, 0 ),
         velocity: new THREE.Vector3 ( 0.0, 30.0, 0.0),
         lifetime: 5,
-        size:     10.0,
+        size:     0.00001,
     },
 
     // Update
