@@ -10,6 +10,13 @@ Game.init = function() {
 	this.openStoryline(); // open the storyline on the web page 
 }
 
+Game.bumpedIntoAdvisor = function() {
+
+	if (Math.abs(Player.position[0] - Player.professorPosition[0]) < 20 && Math.abs(Player.position[2] - Player.professorPosition[2]) < 20) {
+		return true;
+	}
+	return false;
+}
 
 // Move onto the next level. If finished all levels, won the game!
 Game.progressToNextLevel = function() {

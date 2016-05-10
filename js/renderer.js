@@ -104,6 +104,9 @@ Renderer.update = function () {
     else if (Game.timesUp()) {
         Game.lostGame();
     }
+    else if (Game.bumpedIntoAdvisor()) {
+        Game.restartLevel();
+    }
     else {
         requestAnimationFrame( Renderer.update );    
     }

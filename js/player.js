@@ -56,7 +56,7 @@ Player.pickUpItem = function() {
 		// SystemSettings.addObjectFromFile( 'pizza.png', 'pizza.obj', this.position[0] - 10.0, this.position[1] + 3*(Math.random() - 0.5), this.position[2] - 10.0, 23, 0, 2 );
 		for (var i = 0; i < Player.officersReached.length; i++) {
 
-			if (Player.officersReached[i] == 0 && Math.abs(this.position[0] - Goal.officers[i][0]) < 30 && Math.abs(this.position[2] - Goal.officers[i][2]) < 30) {
+			if (Player.officersReached[i] == 0 && Math.abs(this.position[0] - Goal.officers[i][0]) < 20 && Math.abs(this.position[2] - Goal.officers[i][2]) < 20) {
 				Player.officersReached[i] = 1;
 
 				document.getElementById("superhero" + i + "-2").style.fontWeight = "bold";
@@ -117,7 +117,7 @@ Player.putDownItem = function() {
 		this.pressed = true;
 		SystemSettings.addObjectFromFile( 'pizza.png', 'pizza.obj', this.pizzaLocation[0], 0, this.pizzaLocation[2], 23, 0, 2 );
 		for (var i = 0; i < Player.officersReached.length; i++) {
-			if (Player.officersReached[i] == 0 && Math.abs(this.pizzaLocation[0] - Goal.officers[i][0]) < 30 && Math.abs(this.pizzaLocation[2] - Goal.officers[i][2]) < 30) {
+			if (Player.officersReached[i] == 0 && Math.abs(this.pizzaLocation[0] - Goal.officers[i][0]) < 20 && Math.abs(this.pizzaLocation[2] - Goal.officers[i][2]) < 20) {
 				Player.officersReached[i] = 1;
 				// alert player that they have reached officer
 				// font-weight: bold;
