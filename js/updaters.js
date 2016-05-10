@@ -58,7 +58,7 @@ Collisions.BounceBox = function (particleAttributes, alive, delta_t, box, dampin
             else if (pos.x >= box.xmax) bounceParticle(pos,vel,delta_t,new THREE.Vector4(1,0,0,box.xmax),damping,i,positions,velocities);
             else if (pos.y >= box.ymax) bounceParticle(pos,vel,delta_t,new THREE.Vector4(0,1,0,box.ymax),damping,i,positions,velocities);
             else if (pos.z >= box.zmax) bounceParticle(pos,vel,delta_t,new THREE.Vector4(0,0,1,box.zmax),damping,i,positions,velocities);
-            else { pos.sub(vel.clone().multiplyScalar(delta_t)); setElement( i, positions, pos ); console.log(2);}
+            else { pos.sub(vel.clone().multiplyScalar(delta_t)); setElement( i, positions, pos );}
         }
     }
 }

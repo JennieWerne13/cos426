@@ -29,8 +29,22 @@ window.onload = function() {
             Player.turnRight(turnInc);
         }
         else if (event.which == 32) {
-            Player.pickUpItem();
-            setTimeout(function() {Player.putDownItem();}, 1000);
+            if (Game.level == 0) {
+                Player.pickUpItem();
+                setTimeout(function() {Player.putDownItem();}, 1000);
+            }
+            else if (Game.level == 1) {
+                if (Player.pressed == false) {
+                    var bounds = 10;
+ 
+                    if (Math.abs(Player.position[0] - Player.pizzaLocation[0]) < bounds && Math.abs(Player.position[2] - Player.pizzaLocation[2]) < bounds) {
+                        Player.pickUpItem();
+                    }
+                }
+                else {
+                    Player.putDownItem();
+                }
+            }
         }
     });
 

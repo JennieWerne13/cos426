@@ -5,6 +5,7 @@ Player.init = function() {
 	Player.position = [0,10,149]; // JENNIE: being higher up wastes less space on bottom
 	Player.orientation = [0,rand,0];
 	Player.pressed = false;
+	Player.pizzaLocation = [-10, 0, 130];
 }
 
 // Update the player's position
@@ -20,6 +21,10 @@ Player.pickUpItem = function() {
 	// THIS NEEDS TO BE FILLED IN (MAYBE)
 
 	// Pick up item (this part might not belong in this class, but just generally in the rendering class)
+	this.pizzaLocation[0] = this.position[0]-10.0;
+	this.pizzaLocation[1] = this.position[1]-3.0;
+	this.pizzaLocation[2] = this.position[2]-10.0;
+	Scene._scene.getObjectByName('pizza.obj').position.set(this.pizzaLocation[0],this.pizzaLocation[1],this.pizzaLocation[2]);
 
 	this.pressed = true;
 }
@@ -49,6 +54,13 @@ Player.moveForward = function(amount) {
 		this.position[2] = newPosition[2];
 
 		Renderer._camera.position.set(this.position[0],this.position[1],this.position[2]);
+		if (Game.level == 1 && this.pressed) {
+			this.pizzaLocation[0] = Scene._scene.getObjectByName('pizza.obj').position.x + amount*b.x;
+			this.pizzaLocation[1] = Scene._scene.getObjectByName('pizza.obj').position.y + amount*b.y;
+			this.pizzaLocation[2] = Scene._scene.getObjectByName('pizza.obj').position.z + amount*b.z;
+
+			Scene._scene.getObjectByName('pizza.obj').position.set(this.pizzaLocation[0],this.pizzaLocation[1],this.pizzaLocation[2]);
+		}
 	}
 	else {
 		this.moveForward(amount - 1);
@@ -74,6 +86,13 @@ Player.moveBackward = function(amount) {
 		this.position[2] = newPosition[2];
 
 		Renderer._camera.position.set(this.position[0],this.position[1],this.position[2]);
+		if (Game.level == 1 && this.pressed) {
+			this.pizzaLocation[0] = Scene._scene.getObjectByName('pizza.obj').position.x + amount*b.x;
+			this.pizzaLocation[1] = Scene._scene.getObjectByName('pizza.obj').position.y + amount*b.y;
+			this.pizzaLocation[2] = Scene._scene.getObjectByName('pizza.obj').position.z + amount*b.z;
+
+			Scene._scene.getObjectByName('pizza.obj').position.set(this.pizzaLocation[0],this.pizzaLocation[1],this.pizzaLocation[2]);
+		}
 	}
 	else {
 		this.moveBackward(amount - 1);
@@ -87,9 +106,27 @@ Player.turnLeft = function(amount) {
 
 	Player.orientation[1] += amount;
 	Renderer._camera.rotation.set( Player.orientation[0], Player.orientation[1], Player.orientation[2]); 
+	if (Game.level == 1 && this.pressed) {
+		var tmp = [-10,-10];
+		var rottmp = [0,0];
+		rottmp[0] = Math.cos(Player.orientation[1])*tmp[1] + Math.sin(Player.orientation[1])*tmp[0];
+		rottmp[1] = -Math.sin(Player.orientation[1])*tmp[1] + Math.cos(Player.orientation[1])*tmp[0];
+		console.log(rottmp);
+		Scene._scene.getObjectByName('pizza.obj').position.set(Player.position[0] + rottmp[0],Player.position[1]-3.0,Player.position[2] + rottmp[1]);
+		Scene._scene.getObjectByName('pizza.obj').rotation.set(Player.orientation[0], Player.orientation[1] + Math.PI, Player.orientation[2]);
+	}
 }
 
 Player.turnRight = function(amount) {
 	Player.orientation[1] -= amount;
 	Renderer._camera.rotation.set( Player.orientation[0], Player.orientation[1], Player.orientation[2]); 
+	if (Game.level == 1 && this.pressed) {
+		var tmp = [-10,-10];
+		var rottmp = [0,0];
+		rottmp[0] = Math.cos(Player.orientation[1])*tmp[1] + Math.sin(Player.orientation[1])*tmp[0];
+		rottmp[1] = -Math.sin(Player.orientation[1])*tmp[1] + Math.cos(Player.orientation[1])*tmp[0];
+		console.log(rottmp);
+		Scene._scene.getObjectByName('pizza.obj').position.set(Player.position[0] + rottmp[0],Player.position[1]-3.0,Player.position[2] + rottmp[1]);
+		Scene._scene.getObjectByName('pizza.obj').rotation.set(Player.orientation[0], Player.orientation[1] + Math.PI, Player.orientation[2]);
+	}
 }
